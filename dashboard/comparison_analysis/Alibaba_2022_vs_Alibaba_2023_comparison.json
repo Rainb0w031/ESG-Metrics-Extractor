@@ -1,0 +1,4406 @@
+{
+  "comparison_summary": {
+    "total_metrics_a": 307,
+    "total_metrics_b": 424,
+    "similar_metrics": 77,
+    "unique_to_a": 267,
+    "unique_to_b": 346,
+    "overall_comparability": "High"
+  },
+  "similar_metrics": [
+    {
+      "metric_a": "Alibaba 2022 - Scope 1 Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Scope 1 Greenhouse Gas Emissions",
+      "value_a": "0.927 MMt CO2e",
+      "value_b": "0.926 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "High",
+      "analysis": "Scope 1 emissions decreased slightly from 0.927 MMt CO2e in 2022 to 0.926 MMt CO2e in 2023, indicating minimal change."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Scope 2 Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Scope 2 Greenhouse Gas Emissions",
+      "value_a": "4.445 MMt CO2e",
+      "value_b": "3.755 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "High",
+      "analysis": "Scope 2 emissions decreased significantly from 4.445 MMt CO2e in 2022 to 3.755 MMt CO2e in 2023, reflecting a reduction of 0.69 MMt CO2e."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Clean Energy Procurement Percentage",
+      "metric_b": "Alibaba 2023 - Percentage of Clean Energy Consumption in FY2023",
+      "value_a": "21.6 %",
+      "value_b": "53.9 %",
+      "category": "E - Energy",
+      "similarity_confidence": "High",
+      "analysis": "Clean energy procurement increased substantially from 21.6% in 2022 to 53.9% in 2023, demonstrating a significant improvement in renewable energy adoption."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Power Usage Effectiveness (PUE)",
+      "metric_b": "Alibaba 2023 - Power Utilization Efficiency (PUE) for Self-Built Data Centers (FY2023)",
+      "value_a": "1.247",
+      "value_b": "1.215",
+      "category": "E - Energy Efficiency",
+      "similarity_confidence": "High",
+      "analysis": "PUE improved slightly from 1.247 in 2022 to 1.215 in 2023, indicating enhanced energy efficiency in data centers."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Solar Power Capacity Installed by Alibaba Cloud",
+      "metric_b": "Alibaba 2023 - Distributed Solar Panel Capacity Installed",
+      "value_a": "24.9 MW",
+      "value_b": "30.0 MW",
+      "category": "E - Renewable Energy",
+      "similarity_confidence": "High",
+      "analysis": "Solar power capacity increased from 24.9 MW in 2022 to 30.0 MW in 2023, reflecting a year-over-year growth of 5.1 MW."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Scope 1 Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Supplier Carbon Emissions Reduction",
+      "value_a": "0.927 MMt CO2e",
+      "value_b": "0.363 CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "Medium",
+      "analysis": "The value for Scope 1 emissions in 2022 is higher than the supplier carbon emissions reduction reported in 2023, indicating a focus on reducing indirect emissions in the supply chain."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Scope 2 Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Emissions Reduction from Leased Data Centers",
+      "value_a": "4.445 MMt CO2e",
+      "value_b": "0.363 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "Medium",
+      "analysis": "Scope 2 emissions in 2022 are significantly higher than the emissions reduction from leased data centers in 2023, suggesting ongoing efforts to address energy-related emissions."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Scope 3 Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Scope 3 Emissions Reduction (Overall)",
+      "value_a": "7.877 MMt CO2e",
+      "value_b": "0.40 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "High",
+      "analysis": "Scope 3 emissions in 2022 are much higher than the overall Scope 3 emissions reduction reported in 2023, reflecting continued challenges in reducing value chain emissions."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Platform Ecosystem Emissions Reduction",
+      "value_a": "13.249 MMt CO2e",
+      "value_b": "22.907 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "Medium",
+      "analysis": "Total emissions in 2022 are lower than the platform ecosystem emissions reduction in 2023, highlighting the scale of Alibaba's broader environmental impact beyond direct operations."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Clean Energy Procurement Percentage",
+      "metric_b": "Alibaba 2023 - Percentage of Women Employed Through Digital Platforms",
+      "value_a": "21.6 %",
+      "value_b": "38 million",
+      "category": "S - Diversity & Inclusion",
+      "similarity_confidence": "Low",
+      "analysis": "These metrics measure entirely different concepts and cannot be directly compared; one tracks renewable energy adoption while the other measures workforce diversity."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Power Usage Effectiveness (PUE)",
+      "metric_b": "Alibaba 2023 - Average Training Hours per Employee",
+      "value_a": "1.247",
+      "value_b": "51 hours",
+      "category": "E - Energy Efficiency",
+      "similarity_confidence": "Low",
+      "analysis": "These metrics are unrelated; PUE measures data center efficiency, while training hours reflect employee development initiatives."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Scope 1 and 2 Carbon Emissions",
+      "value_a": "13.249 MMt CO2e",
+      "value_b": "not specified MMT CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "Low",
+      "analysis": "The metric from Alibaba 2022 provides a specific value for total greenhouse gas emissions, while the corresponding metric in Alibaba 2023 lacks a quantifiable value, making direct comparison challenging."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Clean Energy Procurement Percentage",
+      "metric_b": "Alibaba 2023 - Renewable Energy Usage Percentage",
+      "value_a": "21.6 %",
+      "value_b": "not specified %",
+      "category": "E - Energy",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics measure renewable energy usage, but Alibaba 2023 does not provide a specific percentage, preventing a quantitative comparison."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Power Usage Effectiveness (PUE)",
+      "metric_b": "Alibaba 2023 - Average PUE Across Data Centers",
+      "value_a": "1.247",
+      "value_b": "not specified",
+      "category": "E - Energy Efficiency",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics assess power usage effectiveness, but Alibaba 2023 lacks a specific value, limiting comparability."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Annual Electricity Saved",
+      "metric_b": "Alibaba 2023 - Energy Savings from Efficiency Improvements",
+      "value_a": "20 million kWh",
+      "value_b": "not specified million kWh",
+      "category": "E - Energy Efficiency",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics evaluate energy savings, but Alibaba 2023 does not provide a specific value, hindering precise comparison."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Annual Water Reduction Across Stores",
+      "metric_b": "Alibaba 2023 - Water Savings from Campus Initiatives",
+      "value_a": "490000 tons",
+      "value_b": "not specified tons",
+      "category": "E - Water Management",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics address water reduction efforts, but Alibaba 2023 lacks a specific value, preventing a detailed comparison."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Recycled Servers",
+      "metric_b": "Alibaba 2023 - Servers Recycled Through Sustainability Programs",
+      "value_a": "50000",
+      "value_b": "not specified",
+      "category": "E - Waste Management",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics track server recycling, but Alibaba 2023 does not provide a specific count, limiting comparability."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Electric Vehicle Chargers Installed",
+      "metric_b": "Alibaba 2023 - EV Charging Stations Deployed",
+      "value_a": "1300",
+      "value_b": "not specified",
+      "category": "E - Transportation",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics measure EV charger installations, but Alibaba 2023 lacks a specific number, preventing a direct comparison."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Gender Representation in Workforce",
+      "metric_b": "Alibaba 2023 - Gender Diversity in Workforce",
+      "value_a": "50 %",
+      "value_b": "not specified %",
+      "category": "S - Diversity & Inclusion",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics assess gender representation, but Alibaba 2023 does not provide a specific percentage, limiting comparability."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Female Directors",
+      "metric_b": "Alibaba 2023 - Female Board Members",
+      "value_a": "3",
+      "value_b": "not specified",
+      "category": "G - Board Diversity",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics track female board representation, but Alibaba 2023 lacks a specific count, hindering precise comparison."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Scope 1 Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Scope 1 Carbon Emissions",
+      "value_a": "0.927 MMt CO2e",
+      "value_b": "0.950 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "High",
+      "analysis": "Scope 1 emissions increased slightly from 0.927 MMt CO2e in 2022 to 0.950 MMt CO2e in 2023, indicating a marginal rise in direct operational emissions."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Scope 2 Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Scope 2 Carbon Emissions",
+      "value_a": "4.445 MMt CO2e",
+      "value_b": "4.600 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "High",
+      "analysis": "Scope 2 emissions rose from 4.445 MMt CO2e in 2022 to 4.600 MMt CO2e in 2023, reflecting an increase in indirect energy-related emissions."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - Total Carbon Emissions",
+      "value_a": "13.249 MMt CO2e",
+      "value_b": "14.000 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "High",
+      "analysis": "Total emissions increased from 13.249 MMt CO2e in 2022 to 14.000 MMt CO2e in 2023, showing a moderate year-over-year growth."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Power Usage Effectiveness (PUE)",
+      "metric_b": "Alibaba 2023 - Average Power Usage Effectiveness (PUE)",
+      "value_a": "1.247",
+      "value_b": "1.220",
+      "category": "E - Energy Efficiency",
+      "similarity_confidence": "High",
+      "analysis": "PUE improved from 1.247 in 2022 to 1.220 in 2023, indicating enhanced energy efficiency in data center operations."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Annual Electricity Saved",
+      "metric_b": "Alibaba 2023 - Annual Energy Savings",
+      "value_a": "20 million kWh",
+      "value_b": "22 million kWh",
+      "category": "E - Energy Efficiency",
+      "similarity_confidence": "High",
+      "analysis": "Energy savings increased from 20 million kWh in 2022 to 22 million kWh in 2023, reflecting continued efforts in energy conservation."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Energy Consumption",
+      "metric_b": "Alibaba 2023 - Total Energy Use",
+      "value_a": "8786584 MWh",
+      "value_b": "9000000 MWh",
+      "category": "E - Energy",
+      "similarity_confidence": "High",
+      "analysis": "Total energy consumption grew from 8,786,584 MWh in 2022 to 9,000,000 MWh in 2023, aligning with business expansion."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Gender Representation in Workforce",
+      "metric_b": "Alibaba 2023 - Percentage of Women in Total Workforce",
+      "value_a": "50 %",
+      "value_b": "49.1 %",
+      "category": "S - Diversity & Inclusion",
+      "similarity_confidence": "High",
+      "analysis": "Female workforce representation decreased slightly from 50% in 2022 to 49.1% in 2023, though it remains near parity."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Female Leaders in Senior Management",
+      "metric_b": "Alibaba 2023 - Percentage of Women in Management Positions",
+      "value_a": "39 %",
+      "value_b": "41.9 %",
+      "category": "S - Diversity & Inclusion",
+      "similarity_confidence": "High",
+      "analysis": "The percentage of women in management roles increased from 39% in 2022 to 41.9% in 2023, showing progress in leadership diversity."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Independent Directors on the Board",
+      "metric_b": "Alibaba 2023 - Number of Independent Directors",
+      "value_a": "7",
+      "value_b": "6",
+      "category": "G - Board Diversity",
+      "similarity_confidence": "High",
+      "analysis": "The number of independent directors decreased from 7 in 2022 to 6 in 2023, potentially impacting board independence."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Suppliers Signed to Code of Conduct",
+      "metric_b": "Alibaba 2023 - Number of Suppliers Signed to ESG Code of Conduct",
+      "value_a": "10000",
+      "value_b": "14000 None",
+      "category": "G - Ethics & Compliance",
+      "similarity_confidence": "High",
+      "analysis": "The number of suppliers signed to the code of conduct increased from 10,000 in 2022 to 14,000 in 2023, reflecting a 40% growth in supplier engagement with ESG practices."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Workforce Size",
+      "metric_b": "Alibaba 2023 - total_employees",
+      "value_a": "250000",
+      "value_b": "235216 None",
+      "category": "S - Human Resources Management",
+      "similarity_confidence": "High",
+      "analysis": "The total workforce size decreased slightly from 250,000 in 2022 to 235,216 in 2023, representing a reduction of approximately 6%."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Female Employees",
+      "metric_b": "Alibaba 2023 - employees_with_physical_disabilities",
+      "value_a": "49.5 %",
+      "value_b": "1451 None",
+      "category": "S - Diversity & Inclusion",
+      "similarity_confidence": "Medium",
+      "analysis": "While both metrics relate to workforce diversity, they measure different aspects. The percentage of female employees in 2022 was 49.5%, while the number of employees with physical disabilities in 2023 was reported as 1,451."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Independent Directors on the Board",
+      "metric_b": "Alibaba 2023 - cases_initiated_and_concluded",
+      "value_a": "7",
+      "value_b": "2 None",
+      "category": "G - Board Diversity",
+      "similarity_confidence": "Low",
+      "analysis": "These metrics are not directly comparable. The number of independent directors on the board in 2022 was 7, while the number of cases initiated and concluded in 2023 was 2."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Scope 3 Supply Chain Greenhouse Gas Emissions",
+      "metric_b": "Alibaba 2023 - identified_climate_risks_and_opportunities",
+      "value_a": "7.877 MMT CO2e",
+      "value_b": "10 None",
+      "category": "E - Carbon Emissions",
+      "similarity_confidence": "Low",
+      "analysis": "These metrics address different aspects of climate-related reporting. Scope 3 emissions in 2022 were 7.877 MMT CO2e, while the number of identified climate risks and opportunities in 2023 was 10."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Women in Management Positions",
+      "metric_b": "Alibaba 2023 - Proportion of Clean Energy in Total Energy Consumption",
+      "value_a": "28.15 %",
+      "value_b": "53.9 %",
+      "category": "S - Diversity & Inclusion / E - Environmental - Energy",
+      "similarity_confidence": "Low",
+      "analysis": "The metrics are not directly comparable as they measure different concepts: gender diversity vs. renewable energy usage. However, both are percentage-based metrics."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Rural Live Streamers Trained",
+      "metric_b": "Alibaba 2023 - Number of Servers Recycled",
+      "value_a": "110000",
+      "value_b": "49747 None",
+      "category": "S - Digital Inclusion / E - Waste Management",
+      "similarity_confidence": "Low",
+      "analysis": "Both metrics involve counts of items or individuals but measure entirely different aspects of sustainability."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Women in Management Positions",
+      "metric_b": "Alibaba 2023 - Percentage of Women in Management Roles",
+      "value_a": "28.15 %",
+      "value_b": "41.9 %",
+      "category": "S - Diversity & Inclusion",
+      "similarity_confidence": "High",
+      "analysis": "The percentage of women in management roles increased from 28.15% in 2022 to 41.9% in 2023, reflecting a significant improvement in gender diversity within leadership positions."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Women in Executive Management",
+      "metric_b": "Alibaba 2023 - Percentage of Women in Executive Management",
+      "value_a": "50.00 %",
+      "value_b": "25 %",
+      "category": "S - Diversity & Inclusion",
+      "similarity_confidence": "High",
+      "analysis": "The percentage of women in executive management decreased from 50.00% in 2022 to 25% in 2023, indicating a decline in female representation at the highest levels of leadership."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Employee Training Sessions Conducted",
+      "metric_b": "Alibaba 2023 - Total Number of Training Sessions Conducted",
+      "value_a": "59476",
+      "value_b": "62383 None",
+      "category": "S - Education & Training",
+      "similarity_confidence": "High",
+      "analysis": "The total number of training sessions conducted increased from 59,476 in 2022 to 62,383 in 2023, reflecting a modest rise in training activities."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Learning Materials Added",
+      "metric_b": "Alibaba 2023 - Number of New Learning Materials Added",
+      "value_a": "39378",
+      "value_b": "33437 None",
+      "category": "S - Education & Training",
+      "similarity_confidence": "High",
+      "analysis": "The number of learning materials added decreased from 39,378 in 2022 to 33,437 in 2023, indicating a reduction in educational content creation."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Rural Live Streamers Trained",
+      "metric_b": "Alibaba 2023 - Number of Farmer Live Streamers Trained",
+      "value_a": "110000",
+      "value_b": "13000 None",
+      "category": "S - Digital Inclusion",
+      "similarity_confidence": "High",
+      "analysis": "The number of rural live streamers trained decreased significantly from 110,000 in 2022 to 13,000 in 2023, suggesting a shift in focus or reduced emphasis on this initiative."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Rural Teachers and Students Trained",
+      "metric_b": "Alibaba 2023 - Teachers and Students Served by Cloud Computer Rooms",
+      "value_a": "610000",
+      "value_b": "60000 None",
+      "category": "S - Education & Training",
+      "similarity_confidence": "Medium",
+      "analysis": "The number of teachers and students served decreased from 610,000 in 2022 to 60,000 in 2023, indicating a substantial reduction in educational outreach."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Digital Talent Centers",
+      "metric_b": "Alibaba 2023 - Number of Regional Digital Talent Training Bases",
+      "value_a": "71",
+      "value_b": "77 None",
+      "category": "S - Education & Training",
+      "similarity_confidence": "High",
+      "analysis": "The number of digital talent centers increased slightly from 71 in 2022 to 77 in 2023, showing continued investment in digital skills development."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Employees Taking Companionship Leave",
+      "metric_b": "Alibaba 2023 - Number of Children Insured Under Employee Healthcare Benefits",
+      "value_a": "28000 people",
+      "value_b": "33000 None",
+      "category": "S - Family Support / Benefits",
+      "similarity_confidence": "Low",
+      "analysis": "While both metrics relate to employee benefits, they measure different aspects: companionship leave participation versus children insured under healthcare benefits."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Work-Related Fatalities",
+      "metric_b": "Alibaba 2023 - Work-Related Fatalities",
+      "value_a": "0",
+      "value_b": "N/A",
+      "category": "S - Employee Health & Safety",
+      "similarity_confidence": "High",
+      "analysis": "Both reports indicate zero work-related fatalities, maintaining a strong safety record."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Employee Attendance in Training Sessions",
+      "metric_b": "Alibaba 2023 - Employee Training Participation Count",
+      "value_a": "1080816",
+      "value_b": "700000 None",
+      "category": "S - Education & Training",
+      "similarity_confidence": "Medium",
+      "analysis": "Employee attendance in training sessions decreased significantly from 1,080,816 in 2022 to 700,000 in 2023, reflecting a potential reduction in training engagement or changes in reporting scope."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of AED Machines Installed",
+      "metric_b": "Alibaba 2023 - AEDs Installed Across Campuses",
+      "value_a": "81",
+      "value_b": "138 None",
+      "category": "S - Employee Health & Safety",
+      "similarity_confidence": "High",
+      "analysis": "The number of AED machines installed increased from 81 in 2022 to 138 in 2023, showing a substantial improvement in workplace safety infrastructure."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Employees Taking Companionship Leave",
+      "metric_b": "Alibaba 2023 - Employees Taking Companionship Leave",
+      "value_a": "28000 people",
+      "value_b": "62138 None",
+      "category": "S - Family Support / Benefits",
+      "similarity_confidence": "High",
+      "analysis": "The number of employees taking companionship leave more than doubled from 28,000 in 2022 to 62,138 in 2023, highlighting an expanded focus on family support benefits."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Sales Generated from Impoverished Counties",
+      "metric_b": "Alibaba 2023 - sales_of_832_counties",
+      "value_a": "128.1 billion",
+      "value_b": "130 billion",
+      "category": "S - Community",
+      "similarity_confidence": "High",
+      "analysis": "Sales generated from impoverished counties increased slightly from 128.1 billion in 2022 to 130 billion in 2023, demonstrating continued economic support for these regions."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Employee Training Sessions",
+      "metric_b": "Alibaba 2023 - Number of Philanthropic Activities Organized",
+      "value_a": "800",
+      "value_b": "1000 None",
+      "category": "S - Education & Training",
+      "similarity_confidence": "Medium",
+      "analysis": "The number of training sessions in 2022 was 800, while the number of philanthropic activities organized in 2023 was reported as 1000. While not directly comparable, both metrics reflect organizational efforts in employee and community engagement."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Rural Live Streamers Trained",
+      "metric_b": "Alibaba 2023 - Number of Merchants Involved in Philanthropy",
+      "value_a": "110000",
+      "value_b": "2.04 million",
+      "category": "S - Community",
+      "similarity_confidence": "Low",
+      "analysis": "The number of rural live streamers trained in 2022 was 110,000, while the number of merchants involved in philanthropy in 2023 was 2.04 million. These metrics measure different aspects of community engagement but highlight Alibaba's focus on scaling social impact initiatives."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Work-Related Fatalities",
+      "metric_b": "Alibaba 2023 - Number of First Aid Trainees",
+      "value_a": "0",
+      "value_b": "15431 None",
+      "category": "S - Employee Health & Safety",
+      "similarity_confidence": "Low",
+      "analysis": "In 2022, there were no work-related fatalities, while in 2023, 15,431 individuals were trained in first aid. These metrics address different dimensions of workplace safety, with 2023 emphasizing proactive safety measures."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Employee Training Sessions Conducted",
+      "metric_b": "Alibaba 2023 - Total Views of ESG Training Program",
+      "value_a": "20 million",
+      "value_b": "10 million",
+      "category": "S - Education & Training",
+      "similarity_confidence": "Medium",
+      "analysis": "The total training sessions conducted in 2022 were reported as 20 million, while the total views of ESG training programs in 2023 were 10 million. This indicates a decrease in the scale of training-related metrics between the two reports."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Women in Executive Management",
+      "metric_b": "Alibaba 2023 - Percentage of Employees Covered by ESG Training",
+      "value_a": "50.00 %",
+      "value_b": "100 %",
+      "category": "S - Diversity & Inclusion / G - Ethics",
+      "similarity_confidence": "Low",
+      "analysis": "While both metrics are percentages, they measure different concepts. The 2022 metric reflects gender diversity in leadership, whereas the 2023 metric reflects employee coverage in ESG training. The values differ significantly, with 50% for women in executive management and 100% for ESG training coverage."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Non-Profit Organizations Registered for Green Code Initiatives",
+      "metric_b": "Alibaba 2023 - Number of Merchants Reached",
+      "value_a": "330",
+      "value_b": "1.2 million",
+      "category": "S - Community",
+      "similarity_confidence": "Low",
+      "analysis": "The metrics measure different aspects of community engagement, with Alibaba 2022 focusing on non-profit organizations and Alibaba 2023 emphasizing merchants reached. The scale of measurement differs significantly."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Volunteer Programmers Registered for Green Code Initiatives",
+      "metric_b": "Alibaba 2023 - Number of Trainees Certified",
+      "value_a": "6000",
+      "value_b": "2.3 million",
+      "category": "S - Community",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics relate to training and certification programs, but the scope has expanded significantly in 2023, with a much larger number of participants certified."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Donations Made by Alibaba",
+      "metric_b": "Alibaba 2023 - Number of Women Employed Through Digital Platforms",
+      "value_a": "2.6 billion",
+      "value_b": "38 million",
+      "category": "S - Community",
+      "similarity_confidence": "Low",
+      "analysis": "These metrics are not directly comparable as they measure different aspects of social impact: financial contributions versus employment opportunities created."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Children Benefited by Social Initiatives",
+      "metric_b": "Alibaba 2023 - Number of Children Improved Through the Companion Mother Project",
+      "value_a": "1 million",
+      "value_b": "170000",
+      "category": "S - Community",
+      "similarity_confidence": "High",
+      "analysis": "Both metrics focus on children benefiting from initiatives, but the scale is smaller in 2023, potentially indicating a shift in focus or reporting methodology."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Volunteer Sessions Logged in 2022",
+      "metric_b": "Alibaba 2023 - Total Training Views",
+      "value_a": "600 million",
+      "value_b": "10 million",
+      "category": "S - Community",
+      "similarity_confidence": "Medium",
+      "analysis": "Both metrics track engagement in community-focused activities, but the nature of engagement has shifted from volunteer sessions to training views, with a significant decrease in scale."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Non-Profit Organizations Registered for Green Code Initiatives",
+      "metric_b": "Alibaba 2023 - Registered Volunteers for Green Code Initiative",
+      "value_a": "330",
+      "value_b": "6800 None",
+      "category": "S - Community",
+      "similarity_confidence": "High",
+      "analysis": "The number of registered volunteers for the Green Code Initiative increased significantly from 330 in 2022 to 6800 in 2023, indicating a substantial growth in participation."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Projects Supported by Xin 100 Initiative",
+      "metric_b": "Alibaba 2023 - Number of Projects Supported by Xin 100 Initiative",
+      "value_a": "85 projects",
+      "value_b": "102 None",
+      "category": "S - Community",
+      "similarity_confidence": "High",
+      "analysis": "The number of projects supported by the Xin 100 Initiative increased from 85 in 2022 to 102 in 2023, reflecting an expansion in project support."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Donations Made by Alibaba",
+      "metric_b": "Alibaba 2023 - Total Amount Invested in Community Philanthropy",
+      "value_a": "2.6 billion",
+      "value_b": "399 million",
+      "category": "S - Community",
+      "similarity_confidence": "Medium",
+      "analysis": "Total donations made by Alibaba decreased from 2.6 billion in 2022 to 399 million in 2023, indicating a significant reduction in philanthropic spending."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Children Benefited by Social Initiatives",
+      "metric_b": "Alibaba 2023 - Number of Students Benefited in Ethiopia, Nepal, and Myanmar",
+      "value_a": "1 million",
+      "value_b": "6936 None",
+      "category": "S - Community",
+      "similarity_confidence": "Low",
+      "analysis": "The number of children benefited by social initiatives dropped significantly from 1 million in 2022 to 6936 in 2023, suggesting a shift in focus or scale of initiatives."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Non-Profit Organizations Registered for Green Code Initiatives",
+      "metric_b": "Alibaba 2023 - Number of Charity Organizations Registered via Green Code",
+      "value_a": "330",
+      "value_b": "370 None",
+      "category": "S - Community",
+      "similarity_confidence": "High",
+      "analysis": "The number of charity organizations registered via Green Code increased from 330 in 2022 to 370 in 2023, showing a slight growth of 40 organizations."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Volunteer Programmers Registered for Green Code Initiatives",
+      "metric_b": "Alibaba 2023 - Number of Employees Participating in Philanthropy",
+      "value_a": "6000",
+      "value_b": "30000 None",
+      "category": "S - Community",
+      "similarity_confidence": "Medium",
+      "analysis": "The number of employees participating in philanthropy activities grew significantly from 6000 in 2022 to 30000 in 2023, indicating a substantial increase in employee engagement."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Merchants Engaged in Goods for Good Program (2022)",
+      "metric_b": "Alibaba 2023 - Number of Merchants Participating in Philanthropy",
+      "value_a": "2.2 million",
+      "value_b": "2.04 million",
+      "category": "S - Community",
+      "similarity_confidence": "High",
+      "analysis": "The number of merchants participating in philanthropy programs decreased slightly from 2.2 million in 2022 to 2.04 million in 2023."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Consumers Engaged in Goods for Good Program (2022)",
+      "metric_b": "Alibaba 2023 - Number of Consumers Participating in Philanthropy",
+      "value_a": "500 million",
+      "value_b": "470 million",
+      "category": "S - Community",
+      "similarity_confidence": "High",
+      "analysis": "Consumer participation in philanthropy programs declined from 500 million in 2022 to 470 million in 2023, reflecting a decrease of 30 million participants."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Total Donations Made by Alibaba",
+      "metric_b": "Alibaba 2023 - Total Philanthropic Investment",
+      "value_a": "2.6 billion",
+      "value_b": "17 million",
+      "category": "S - Community",
+      "similarity_confidence": "Low",
+      "analysis": "Total philanthropic investment dropped significantly from 2.6 billion in 2022 to 17 million in 2023, indicating a major reduction in financial contributions."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Female Board Members",
+      "metric_b": "Alibaba 2023 - Percentage of Female Directors on the Board",
+      "value_a": "39 %",
+      "value_b": "30 %",
+      "category": "G - Board",
+      "similarity_confidence": "High",
+      "analysis": "The percentage of female board members decreased from 39% in 2022 to 30% in 2023, reflecting a decline in female representation on the board."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Percentage of Independent Directors",
+      "metric_b": "Alibaba 2023 - Percentage of Independent Directors on the Board",
+      "value_a": "58.3 %",
+      "value_b": "60 %",
+      "category": "G - Board",
+      "similarity_confidence": "High",
+      "analysis": "The percentage of independent directors on the board increased slightly from 58.3% in 2022 to 60% in 2023."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Users of Virtual Phone Number Service",
+      "metric_b": "Alibaba 2023 - harmful_searches_guided",
+      "value_a": "500 million",
+      "value_b": "80 million",
+      "category": "G - Governance",
+      "similarity_confidence": "Medium",
+      "analysis": "While both metrics relate to digital safety and user protection, the values differ significantly. The 2022 metric focuses on virtual phone number service users (500 million), while the 2023 metric tracks harmful searches guided (80 million)."
+    },
+    {
+      "metric_a": "Alibaba 2022 - Number of Identified ESG Material Issues",
+      "metric_b": "Alibaba 2023 - Number of Identified Climate Risks and Opportunities",
+      "value_a": "22",
+      "value_b": "10 None",
+      "category": "G - Governance",
+      "similarity_confidence": "Medium",
+      "analysis": "The 2022 report identifies 22 ESG material issues, while the 2023 report narrows focus to 10 climate risks and opportunities, indicating a shift toward more specific risk management."
+    },
+    {
+      "metric_a": "Alibaba 2022 - sdgs_aligned",
+      "metric_b": "Alibaba 2023 - stock_exchanges_with_esg_requirements",
+      "value_a": "17",
+      "value_b": "70 None",
+      "category": "G - Governance",
+      "similarity_confidence": "Low",
+      "analysis": "These metrics are loosely related but measure different concepts. The 2022 metric tracks alignment with 17 SDGs, while the 2023 metric reports 70 stock exchanges with ESG requirements, highlighting a broader focus on external governance frameworks."
+    },
+    {
+      "metric_a": "Alibaba 2022 - countries_joined_aaca",
+      "metric_b": "Alibaba 2023 - Number of Countries/Regions Represented by Employees",
+      "value_a": "21",
+      "value_b": "60 None",
+      "category": "G - governance",
+      "similarity_confidence": "Medium",
+      "analysis": "The metric from Alibaba 2022 measures the number of countries participating in a specific initiative, while Alibaba 2023 measures the diversity of employee representation by country. The values differ significantly, with Alibaba 2023 reporting a higher number of countries represented."
+    },
+    {
+      "metric_a": "Alibaba 2022 - ali_day_attendees",
+      "metric_b": "Alibaba 2023 - Total Participants in Training Programs",
+      "value_a": "30390",
+      "value_b": "1636 None",
+      "category": "S - Education & Training",
+      "similarity_confidence": "Low",
+      "analysis": "Both metrics relate to participation in company-sponsored events, but the context differs. Alibaba 2022 reports a significantly higher number of attendees for a specific event, while Alibaba 2023 focuses on training program participants."
+    },
+    {
+      "metric_a": "Alibaba 2022 - brands_joined_aaca",
+      "metric_b": "Alibaba 2023 - Number of Brands Participating in Philanthropy Programs",
+      "value_a": "1100",
+      "value_b": "1100 None",
+      "category": "G - governance / S - Community",
+      "similarity_confidence": "High",
+      "analysis": "The number of brands participating in philanthropy programs remains consistent between 2022 and 2023, with both reports showing 1,100 brands engaged."
+    },
+    {
+      "metric_a": "Alibaba 2022 - countries_joined_aaca",
+      "metric_b": "Alibaba 2023 - Number of Countries/Regions Engaged in Philanthropy Programs",
+      "value_a": "21",
+      "value_b": "21 None",
+      "category": "G - governance / S - Community",
+      "similarity_confidence": "High",
+      "analysis": "The number of countries/regions engaged in philanthropy programs remains unchanged at 21 between 2022 and 2023."
+    }
+  ],
+  "unique_metrics_a": [
+    {
+      "metric": "Alibaba 2022 - Scope 3 Greenhouse Gas Emissions",
+      "value": "7.877 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "This metric highlights the company's indirect emissions from its value chain, which are critical for understanding the full scope of its carbon footprint."
+    },
+    {
+      "metric": "Alibaba 2022 - Total Carbon Intensity per Revenue",
+      "value": "15.5 MtCO2e/million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Carbon intensity per revenue provides insight into the company's efficiency in reducing emissions relative to its economic output."
+    },
+    {
+      "metric": "Alibaba 2022 - Annual Electricity Saved",
+      "value": "20 million kWh",
+      "category": "E - Energy Efficiency",
+      "significance": "This metric demonstrates the company's efforts to improve energy efficiency and reduce operational costs through electricity savings."
+    },
+    {
+      "metric": "Alibaba 2022 - Alibaba Cloud Emissions Reduction",
+      "value": "534000 MtCO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Carbon Intensity per Revenue",
+      "value": "15.5 MtCO2e/million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Scope 1 Carbon Intensity per Revenue",
+      "value": "1.1 MtCO2e/million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Scope 2 Carbon Intensity per Revenue",
+      "value": "5.2 MtCO2e/million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Scope 3 Carbon Intensity",
+      "value": "9.2 MtCO2e/million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Carbon Intensity",
+      "value": "15.5 MtCO2e/million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Scope 1 and 2 Carbon Neutrality Target",
+      "value": "Carbon neutrality in operations MMT CO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Scope 3 Emissions Reduction Target",
+      "value": "50 % reduction in emission intensity from 2020 base",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Scope 3+ Emissions Reduction Target",
+      "value": "1.5 MMT CO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Clean Electricity Purchased in First Half of 2022",
+      "value": "800 million kWh",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Carbon Emissions Reduced in FY2022",
+      "value": "619944 tons",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Proportion of Clean Energy Used by Alibaba Cloud in FY2022",
+      "value": "21.6 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Clean Electricity Purchased by Alibaba Cloud in First Half of 2022",
+      "value": "800 million kWh",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Solar Energy Generated by Alibaba Cloud in FY2022",
+      "value": "11 million kWh",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Solar Panel Installation Target for Alibaba Stores by 2030",
+      "value": "all stores",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Proportion of Renewable Energy Used by Alibaba Cloud in FY2022",
+      "value": "21.6 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Renewable Energy Usage Percentage in 2022",
+      "value": "21.6 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Commitment to 100% Clean Energy by 2030",
+      "value": "100 % by 2030",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Renewable Energy Consumption",
+      "value": "464049 MWh",
+      "category": "E - Renewable Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Solar Energy Generated",
+      "value": "11 million kWh",
+      "category": "E - Renewable Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Energy Saving Percentage per Store",
+      "value": "15 -15%",
+      "category": "E - Energy Efficiency",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Average Annual Energy Saving per Store",
+      "value": "700000 MW",
+      "category": "E - Energy Efficiency",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Energy Consumption Reduction from Exhaust Fan Upgrades",
+      "value": "21 re than 21 million kWh annually",
+      "category": "E - Energy Efficiency",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Energy Savings from Sidewalk Upgrades",
+      "value": "20 million kWh annually",
+      "category": "E - Energy Efficiency",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Average Power Usage Effectiveness (PUE)",
+      "value": "1.247",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Annual Energy Efficiency Improvement",
+      "value": "3 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Power Supply Efficiency",
+      "value": "97.5 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Water Usage Effectiveness",
+      "value": "0.45 liters",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Production Energy Efficiency Improvement",
+      "value": "45 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Production Energy Cost Reduction",
+      "value": "21 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Green Energy Projects Signed",
+      "value": "8 MW",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Funds Allocated for Green Buildings",
+      "value": "352 2 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Funds Allocated for Energy-Efficient Data Centers",
+      "value": "451 1 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Green Electricity Traded (Fiscal Year 2022)",
+      "value": "87 million kWh",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Year-over-Year Increase in Green Electricity Usage",
+      "value": "190 e than 190%",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Emissions Reduction from Green Electricity",
+      "value": "62000 62,000 tons",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Waste Heat Utilization Heating Load",
+      "value": "21 MW",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Annual Carbon Emission Reduction",
+      "value": "32000 tons",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Green Energy Capacity of Partnered Projects",
+      "value": "1700 MW",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Annual Clean Electricity Consumption",
+      "value": "360 million kWh",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Annual Water Savings from Campus Initiatives",
+      "value": "100000 tons",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Water Reduction per Store Annually",
+      "value": "1000 tons",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Annual Water Use Reduction Target",
+      "value": "3 %",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Rainwater Recycled at Xixi Office Park B",
+      "value": "10763 tons",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Rainwater Recycled in FY2022",
+      "value": "10763 tons",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Reclaimed Water Recovery Volume (FY2022)",
+      "value": "11899 tons",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Reclaimed Water Procurement Volume (FY2022)",
+      "value": "359252 tons",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Water Usage Effectiveness at Zhangbei Wulan Center",
+      "value": "0.45 liters",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Kitchen Waste Reduction (FY2022)",
+      "value": "4 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Food Waste Reduction",
+      "value": "4 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Sewage Discharge Reduction",
+      "value": "35 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Supplementary Water Consumption Reduction",
+      "value": "26 %",
+      "category": "E - Water Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Material Reduction Percentage",
+      "value": "15 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Cities with Shipping Box Recycling Programs",
+      "value": "315",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Server Cores Extended Through Warranty Extension",
+      "value": "20 million cores",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Weight of Recycled Cardboard Materials",
+      "value": "124400 tons",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Users on Re-commerce Platform",
+      "value": "300 million",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage Reduction in Packing Box Material Usage",
+      "value": "15 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Types of Upgraded Packaging Materials Used",
+      "value": "Degradable plastic, paper, and recyclable non-woven bags",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Original Packing Boxes Shipped",
+      "value": "700 million pieces",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Cities Covered by Recycling Program",
+      "value": "315",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Provincial Administrative Regions Covered",
+      "value": "31",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Tmall Offline Stores with Recycling Machines",
+      "value": "170",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Merchants Using Biodegradable Plastic Bags",
+      "value": "195",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Growth in Use of Biodegradable Plastic Bags",
+      "value": "590 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Food Waste Reduction in Tons",
+      "value": "4 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Production Efficiency Improvement",
+      "value": "45 %",
+      "category": "E - Energy Efficiency",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Building Energy Cost Reduction",
+      "value": "21 %",
+      "category": "E - Energy Efficiency",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Greenhouse Gas Emissions Avoided Through Office Renovations",
+      "value": "not specified MMT CO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Carbon Emissions Avoided from Office Renovations",
+      "value": "79000 tons",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Women-Led MSMEs Supported",
+      "value": "46 %",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Male Employees",
+      "value": "50.46 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Merchants Operated by Women",
+      "value": "50 arly 50%",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Female E-commerce Entrepreneurs on Taobao",
+      "value": "46 %",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Female Livestreamers",
+      "value": "78.2 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Livestreamers with High School Education or Below",
+      "value": "31.3 %",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Female Leadership in Executive Roles",
+      "value": "39 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Female Directors on the Board",
+      "value": "3",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Employee Training Sessions Conducted",
+      "value": "59476",
+      "category": "S - Employee Health & Safety",
+      "significance": "Reflects the scale of employee development initiatives in 2022."
+    },
+    {
+      "metric": "Alibaba 2022 - Work-Related Fatalities",
+      "value": "0",
+      "category": "S - Employee Health & Safety",
+      "significance": "Indicates a strong safety record with no work-related fatalities in 2022."
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Female Executives in Management",
+      "value": "50.00 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Average Training Hours per Employee",
+      "value": "49",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Rural Live Streaming Sessions Completed",
+      "value": "2.3 million",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Courses Offered",
+      "value": "1321",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Learning Paths Developed",
+      "value": "44",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - New Employee Training Sessions",
+      "value": "344",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - New Manager Training Sessions",
+      "value": "145",
+      "category": "S - Leadership Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Training Sessions Conducted",
+      "value": "59476",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Duration of Dream Academy Program",
+      "value": "5",
+      "category": "S - Employee Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Singularity Academy Courses Offered",
+      "value": "1321",
+      "category": "S - Employee Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Singularity Academy Learning Paths",
+      "value": "44",
+      "category": "S - Employee Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Offline Training Sessions (FY2022)",
+      "value": "344",
+      "category": "S - Employee Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Offline Training Sessions for Managers (FY2022)",
+      "value": "145",
+      "category": "S - Employee Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Training Sessions Conducted (FY2022)",
+      "value": "59476",
+      "category": "S - Employee Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Learning Materials Added in FY2022",
+      "value": "39378",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Employee Attendance Records in Training Sessions (FY2022)",
+      "value": "1080816",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Fire Drills Conducted in FY2022",
+      "value": "430",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of First Aid Drills Conducted in FY2022",
+      "value": "431",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Merchant Users with Access to Business Advisors",
+      "value": "90 %",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Training Lessons Delivered in FY2022",
+      "value": "1000",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Training Attendances in FY2022",
+      "value": "20 million",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Training Lessons Produced in FY2022",
+      "value": "1000",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Trained Livestreamers",
+      "value": "110000",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Training Attendances",
+      "value": "70000",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Courses Added for Rural E-Commerce Training",
+      "value": "200",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Participants Trained in Rural E-Commerce",
+      "value": "7000",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Livestreamers with High School Education or Below",
+      "value": "31.3 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Internal Job Positions Filled",
+      "value": "7707",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Employees Reaching Five-Year Career Milestone",
+      "value": "6496 people",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Internal Job Transfers Completed",
+      "value": "7077",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Employees Reaching Career Milestone",
+      "value": "6496 people",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Internal Transfers in FY2022",
+      "value": "7077",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Employees Participating in Star Plan",
+      "value": "9414",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Courses Offered by Singularity Academy",
+      "value": "1321",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Systematic Learning Paths Offered",
+      "value": "44",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Employee Training Attendances",
+      "value": "100 million",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Employee Engagement Activities Attendances",
+      "value": "100 million",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Trained Digital Managers",
+      "value": "2 ore than 2 million",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Trained Livestreamers",
+      "value": "110000",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Work-Related Fatalities Rate",
+      "value": "0 %",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Work-Related Injuries",
+      "value": "25",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Work Days Lost Due to Absences",
+      "value": "839",
+      "category": "S - Social: Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Work-Related Injury Rate",
+      "value": "0.11 %",
+      "category": "S - Social: Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Work Days Lost Due to Injuries",
+      "value": "839",
+      "category": "S - Social: Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Medical Check-Up Participants",
+      "value": "65000",
+      "category": "S - Social: Employee Health & Wellness",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Children Insurance Coverage Count",
+      "value": "30000",
+      "category": "S - Social: Family Support & Well-Being",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Parents Receiving Medical Check-Ups",
+      "value": "65000",
+      "category": "S - Social: Employee Health & Wellness",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Mental Health Interventions Provided",
+      "value": "4400",
+      "category": "S - Social: Employee Health & Wellness",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Mental Health Counseling Calls",
+      "value": "34000",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Employees Taking Companionship Leave",
+      "value": "28000",
+      "category": "S - Family Support / Benefits",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Average Monthly Salary in Local Jobs",
+      "value": "3000",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - National Poverty Alleviation Innovation Award Recipient (2019)",
+      "value": "Yes",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Revenue from Products Sold in Impoverished Counties (2021)",
+      "value": "128.1 8.1 billion",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - National Exemplary Organization in Poverty Alleviation (2021)",
+      "value": "Yes",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of County-Level Logistics Centers",
+      "value": "1000",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Rural Village Stations Established",
+      "value": "50000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Rural Live Streamers Trained",
+      "value": "110000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Rural Live Streaming Sessions Completed",
+      "value": "2.3 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Impoverished Counties with Sales Activity",
+      "value": "832",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Medical Supplies Distributed",
+      "value": "260 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Countries Receiving Medical Supplies",
+      "value": "150",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Rural Commissioners Sent",
+      "value": "27",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Rural Technology Officers Deployed",
+      "value": "160",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Taobao Villages",
+      "value": "7023",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Taobao Towns",
+      "value": "2171",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Sales from Taobao Villages and Towns",
+      "value": "1300 billion",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Population of Residents in Taobao Villages and Towns",
+      "value": "200000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Population of Villages Supported by Alibaba",
+      "value": "500",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of E-WTP Projects Launched",
+      "value": "10 projects",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Continents Covered by E-WTP Projects",
+      "value": "4",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Relief Supplies Distributed",
+      "value": "30000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Active Riders on Eleme Platform",
+      "value": "1 ore than 1 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Increase in Online Sales from Impoverished Areas",
+      "value": "30 B30 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Average Annual Income Increase for Rural Residents",
+      "value": "50000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Counties Covered by Star Plan Initiative",
+      "value": "45",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Direct Jobs Created in Xunwu",
+      "value": "200",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - New Clinics Established",
+      "value": "50",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Rural Clinics Equipped with Medical Infrastructure",
+      "value": "574",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of People Served Through Social Initiatives",
+      "value": "680000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Hong Kong Community Donation Amount",
+      "value": "10 $10 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Henan Flood Relief Contributions",
+      "value": "100 100 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Shanxi Flood Relief Contributions",
+      "value": "30 B 30 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Community Donation Amount",
+      "value": "550 550 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Community Fund Allocation",
+      "value": "100 100 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Schools Reached Through Social Programs",
+      "value": "230000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Provinces Covered by Social Initiatives",
+      "value": "31",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Non-Profit Organizations Registered for Green Code Initiatives",
+      "value": "330",
+      "category": "S - Community",
+      "significance": "Highlights Alibaba's engagement with non-profit organizations to promote sustainability initiatives."
+    },
+    {
+      "metric": "Alibaba 2022 - Total Donations Made by Alibaba",
+      "value": "2.6 billion",
+      "category": "S - Community",
+      "significance": "Demonstrates the scale of Alibaba's financial commitment to philanthropic efforts."
+    },
+    {
+      "metric": "Alibaba 2022 - Total Volunteer Sessions Logged in 2022",
+      "value": "600 million",
+      "category": "S - Community",
+      "significance": "Reflects the extensive volunteer engagement within Alibaba's community programs."
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Employees Participating in 'Three Hours for a Better World'",
+      "value": "30390",
+      "category": "S - Community",
+      "significance": "Indicates employee involvement in corporate social responsibility activities."
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Board Members",
+      "value": "12",
+      "category": "G - Board",
+      "significance": "Provides insight into the governance structure and leadership oversight at Alibaba."
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Non-Profit Organizations Collaborated With in Green Code Camps",
+      "value": "19",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Charitable Organizations Involved in Xin 100 Initiative",
+      "value": "49",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Funds Raised Through Social Initiatives",
+      "value": "128 128 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Employees Participating in 'Three Hours for a Better World'",
+      "value": "30390",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Average Volunteer Hours per Employee",
+      "value": "3",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Charitable Organizations Engaged in 2022",
+      "value": "330",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Engineers Participating in Green Code Initiatives",
+      "value": "6000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Required Volunteer Hours per Employee",
+      "value": "3",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Volunteers Trained in 2022",
+      "value": "2000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Number of Volunteers in 2022",
+      "value": "2000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Fire Marshall Training Participants",
+      "value": "1100",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - First Aid Responder Training Participants",
+      "value": "1700",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Rural Technology Officers Dispatched",
+      "value": "160",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Annual Volunteer Hours per Employee",
+      "value": "3",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Employees Involved in Volunteering",
+      "value": "400 people",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Children Supported Through Volunteering",
+      "value": "260",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Volunteer Participants",
+      "value": "200",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Volunteers",
+      "value": "200",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Non-Profit Organizations Registered for Green Code Initiative",
+      "value": "330",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Volunteer Programmers Registered for Green Code Initiative",
+      "value": "6000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Non-Profit Organizations Collaborated With in Green Code Camp",
+      "value": "19",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Registered Participants in 'Three Hours for a Better World' Initiative",
+      "value": "150 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Participants in Green Code Projects",
+      "value": "150 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Organizations Connected Through Philanthropy Efforts",
+      "value": "330",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Programmers Involved in Philanthropy Initiatives",
+      "value": "6000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Organizations Connected to Green Code Initiative",
+      "value": "330",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Employee Participation in Green Code Initiatives",
+      "value": "6000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Engineer Participation in Philanthropy Programs",
+      "value": "6000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Merchants Engaged in Goods for Good Initiative",
+      "value": "2.2 million+",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Consumers Engaged in Goods for Good Initiative",
+      "value": "500 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Projects Supported by Alibaba Philanthropy",
+      "value": "200 projects",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Enterprises Supported Through Philanthropy Initiatives",
+      "value": "10000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Visitors to Philanthropy Initiatives",
+      "value": "1.5 million",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Sustainability Training Courses Developed",
+      "value": "60",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Wecare Stations Built",
+      "value": "1200",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Wecare Stations Under Construction",
+      "value": "1000",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Geographical Indications Protected",
+      "value": "42",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Freshippo Villages Established",
+      "value": "136",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Provinces with Freshippo Villages",
+      "value": "19",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Amount of Philanthropy Donations in Hong Kong",
+      "value": "10 $10 million",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Amount of Funds Allocated for Henan Flood Relief",
+      "value": "100 100 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Amount of Funds Allocated for Shanxi Flood Relief",
+      "value": "30 B 30 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Members on the Alibaba Philanthropy Committee",
+      "value": "10",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Projects Recognized by the Philanthropy Committee",
+      "value": "10 projects",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Individuals Recognized by the Philanthropy Committee",
+      "value": "14",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Non-Profit Organizations Supported",
+      "value": "330",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Volunteer Programmers Engaged in Philanthropy",
+      "value": "6000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Merchants Participating in Goods for Good Initiatives",
+      "value": "8 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Value of Charitable Proceeds Channeling Goods for Good",
+      "value": "47.3 billion",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of People Benefited by Goods for Good Initiatives",
+      "value": "43 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Consumers Participating in Goods for Good Campaigns",
+      "value": "500 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Merchants Participating in Goods for Good Campaigns",
+      "value": "2.2 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Funds Raised Through the Companion Mother Project",
+      "value": "10 B10 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Villages Supported by Sponsor Families in the Companion Mother Project",
+      "value": "200",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Children Improved Through the Companion Mother Project",
+      "value": "170000",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Children Benefited by the Panda Pack Project",
+      "value": "1 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Funds Raised Through Panda Pack Project",
+      "value": "128 128 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Employee Participation in Philanthropy Activities",
+      "value": "1 billion",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Suppliers Engaged in Sustainability Efforts",
+      "value": "10000",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Proportion of Female Employees in Cainiao Operations",
+      "value": "30 arly 30%",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Suppliers Based in Mainland China",
+      "value": "36.1 thousand",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Suppliers Based in Other Countries/Regions",
+      "value": "17.2 thousand",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Total Number of Board Members",
+      "value": "12",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Independent Directors",
+      "value": "7",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Female Senior Executives on Committees",
+      "value": "5",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Directors Nominated by Partnership",
+      "value": "4",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Directors Nominated by Major Shareholder",
+      "value": "1",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Independent Directors Chairing Committees",
+      "value": "3",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Board Independence Ratio",
+      "value": "75 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Independent Directors on Compensation Committee",
+      "value": "100 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Independent Directors on Audit Committee",
+      "value": "67 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Independent Directors on Nomination and Corporate Governance Committee",
+      "value": "67 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Independent Directors on Sustainability Committee",
+      "value": "50 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Female Board Members",
+      "value": "3",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Percentage of Women in Senior Leadership Roles",
+      "value": "39 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Gender Workforce Split",
+      "value": "50 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Suppliers Signed with Code of Conduct",
+      "value": "10000",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Number of Suppliers Signed with Code of Conduct",
+      "value": "10000",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - Virtual Phone Number Coverage on Taobao",
+      "value": "500 million active consumers",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - number_of_consumer_goods_brands_partners",
+      "value": "19",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - annual_reporting_frequency",
+      "value": "1",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - suppliers_registered",
+      "value": "10000",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - companies_joined_ungc",
+      "value": "9500",
+      "category": "G - governance",
+      "significance": "Indicates the number of companies that joined the United Nations Global Compact (UNGC), reflecting Alibaba's commitment to global sustainability frameworks."
+    },
+    {
+      "metric": "Alibaba 2022 - non_business_signatories",
+      "value": "3000",
+      "category": "G - governance",
+      "significance": "Represents the number of non-business entities that are signatories to the UNGC, highlighting Alibaba's engagement with diverse stakeholders in sustainability initiatives."
+    },
+    {
+      "metric": "Alibaba 2022 - ali_day_attendees",
+      "value": "30390",
+      "category": "G - governance",
+      "significance": "Measures the number of attendees at Alibaba Day events, showcasing stakeholder engagement and transparency efforts."
+    },
+    {
+      "metric": "Alibaba 2022 - brands_joined_aaca",
+      "value": "1100",
+      "category": "G - governance",
+      "significance": "Reflects the number of brands participating in the Alibaba Anti-Counterfeiting Alliance (AACA), demonstrating Alibaba's commitment to intellectual property protection and collaboration."
+    },
+    {
+      "metric": "Alibaba 2022 - countries_joined_aaca",
+      "value": "21",
+      "category": "G - governance",
+      "significance": "Highlights the geographic reach of the AACA, indicating Alibaba's global influence in anti-counterfeiting efforts."
+    },
+    {
+      "metric": "Alibaba 2022 - forbes_best_employers_ranking",
+      "value": "10",
+      "category": "G - governance",
+      "significance": "Shows Alibaba's ranking as one of the best employers by Forbes, reflecting its focus on employee satisfaction and corporate culture."
+    },
+    {
+      "metric": "Alibaba 2022 - attractive_employer_ranking",
+      "value": "1",
+      "category": "G - governance",
+      "significance": "Indicates Alibaba's position as the most attractive employer, emphasizing its strong employer brand and talent acquisition strategy."
+    },
+    {
+      "metric": "Alibaba 2022 - companies_joined_ungc",
+      "value": "9500",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - non_business_signatories",
+      "value": "3000",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - forbes_best_employers_ranking",
+      "value": "10",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2022 - attractive_employer_ranking",
+      "value": "1",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2022 ESG Report"
+    }
+  ],
+  "unique_metrics_b": [
+    {
+      "metric": "Alibaba 2023 - Scope 3 Greenhouse Gas Emission Reductions",
+      "value": "0.40 MMt CO2e",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Scope 3 Greenhouse Gas Emissions Reduced",
+      "value": "22.907 MMt CO2e",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Intensity of Value Chain (FY2022)",
+      "value": "9.2 MtCO2e per million RMB",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Intensity of Value Chain (FY2023)",
+      "value": "8.7 MtCO2e per million RMB",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Greenhouse Gas Emission Reductions in Value Chain",
+      "value": "400000 MtCO2e",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Year-over-Year Decrease in Value Chain Carbon Intensity",
+      "value": "5.7 %",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Greenhouse Gas Emissions (Scope 1, 2, and Partial Scope 3)",
+      "value": "4.681 MMt CO2e",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Year-over-Year Reduction in Greenhouse Gas Emissions",
+      "value": "0.691 MMt CO2e",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage Reduction in Greenhouse Gas Emissions",
+      "value": "12.9 %",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Carbon Emissions Reduction",
+      "value": "22.907 tons",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity (FY2022)",
+      "value": "9.2 MtCO2e per million RMB",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity (FY2023)",
+      "value": "8.7 MtCO2e per million RMB",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Emissions Reduced Through Client Empowerment (Cloud Computing)",
+      "value": "6.863 CO2e",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Current Value Chain Carbon Intensity",
+      "value": "8.7 MtCO2e",
+      "category": "E - Environmental: Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity Reduction Rate",
+      "value": "5.7 %",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity (Per Million RMB)",
+      "value": "8.7 MtCO2e per million RMB",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity (FY2022)",
+      "value": "9.2 MtCO2e per million RMB",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity (FY2023)",
+      "value": "8.7 MtCO2e per million RMB",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Neutrality Target for Own Operations",
+      "value": "Carbon neutrality in own operations None",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Energy Intensity Reduction Target (Value Chain)",
+      "value": "2030 None",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Emission Reduction Target for Platform Ecosystem",
+      "value": "1.5 tons",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Neutrality Goal Year (Value Chain)",
+      "value": "2030 None",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Neutrality Target for Scope 1 and 2 Emissions",
+      "value": "2030 By",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Emission Intensity Reduction Target for Scope 3 Emissions",
+      "value": "50 %",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Neutrality Target for Alibaba Cloud (Scope 1, 2, and 3)",
+      "value": "2030 By",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Emission Reduction Target for Scope 3 Emissions Over 15 Years",
+      "value": "1.5 tons",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Scope 3 Emission Reduction Goal",
+      "value": "1.5 tons",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - 15-Year Emission Reduction Target",
+      "value": "1.5 CO2e",
+      "category": "E - Environmental - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Clean Energy in Self-Built Data Centers",
+      "value": "53.9 %",
+      "category": "E - Environmental - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Clean Energy Consumption in FY2022",
+      "value": "21.6 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Consumption at Self-Operated Campuses",
+      "value": "27.858 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Consumption in External Rental Facilities in Zhejiang Province",
+      "value": "4.477 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Percentage in Self-Built Data Centers (FY2023)",
+      "value": "53.9 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Percentage in Self-Built Data Centers (FY2022)",
+      "value": "21.6 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Renewable Energy Sourced in FY2023",
+      "value": "540 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Installed Capacity of Distributed Solar Panels as of March 2023",
+      "value": "30.0 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Sourced in Self-Built Data Centers",
+      "value": "83642 MWH",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Clean Energy Consumption",
+      "value": "4.477 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Reduction from Clean Energy Use",
+      "value": "211701.0 MtCO2e",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Consumption in Zhejiang",
+      "value": "4.477 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Reduction from Clean Energy in Zhejiang",
+      "value": "3149.4 MtCO2e",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Power Utilization Efficiency (PUE) of Self-Built Data Centers",
+      "value": "1.215 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Power Utilization Efficiency (PUE) of Self-Built Data Centers",
+      "value": "1.215 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Power Utilization Efficiency (PUE) in FY2022",
+      "value": "1.247 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Power Utilization Efficiency (PUE) Value (FY2023)",
+      "value": "1.215 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Energy Efficiency Improvement Percentage",
+      "value": "128.9 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Energy Use Reduction in Zones A and B, Xixi Campus (FY2023)",
+      "value": "2866.2 MtCO2e",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Power Utilization Efficiency (PUE) for Self-Built Data Centers (FY2022)",
+      "value": "1.247 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Power Utilization Efficiency (PUE) at Zhangbei Data Center (March 2023)",
+      "value": "1.19 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Annual Energy Savings per Store",
+      "value": "5.88 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Consumption (Data Centers)",
+      "value": "300 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Emissions Reduced via Clean Energy",
+      "value": "211701.0 MtCO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Electricity Savings per Retail Store",
+      "value": "5.88 million",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Energy Efficiency Improvements from Store Renovations",
+      "value": "5 None",
+      "category": "E - Energy Efficiency",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Consumption (Self-Operated Campus)",
+      "value": "27.858 million",
+      "category": "E - Renewable Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Emissions Reduced by Clean Energy Use",
+      "value": "18543.2 MtCO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Clean Energy Percentage in Guangdong Data Centers",
+      "value": "100 %",
+      "category": "E - Renewable Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Distributed Solar Panel Capacity Installed (March 2022)",
+      "value": "24.9 MW",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Year-over-Year Increase in Distributed Solar Panel Capacity",
+      "value": "20.5 %",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Emissions Reduced by Solar Panel Deployment",
+      "value": "9131.1 MtCO2e",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Carbon Removal from Environmental Projects",
+      "value": "115394.0 MtCO2e",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Energy Expert Customers Supported",
+      "value": "2580 None",
+      "category": "E - Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Wastewater Treated in FY2023",
+      "value": "12482 tons",
+      "category": "E - Water",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Wastewater Reused in FY2023",
+      "value": "6234 tons",
+      "category": "E - Water",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Waste Openly Dumped or Incinerated",
+      "value": "90 %",
+      "category": "E - Waste",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Construction Solid Waste Reduction Rate",
+      "value": "80 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Lifecycle Emissions Reduction from Construction Activities",
+      "value": "28 %",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Cartons Recycled",
+      "value": "23.82 million",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Recyclable Materials Used",
+      "value": "60 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Office Furniture Reused",
+      "value": "62000 pieces",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Servers Cyclically Utilized",
+      "value": "49747 None",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Server Cores with Extended Warranty",
+      "value": "25.73 million",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Construction Waste Reused",
+      "value": "75 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Extended Core Life Through Reuse",
+      "value": "25.73 M",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Carbon Emissions Reduced Through Packaging Optimization",
+      "value": "115394.0 MtCO2e",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Source-Level Packaging Material Minimization",
+      "value": "Minimizing packaging materials from the source by introducing recyclable boxes, baskets, and pallets in multiple processes such as distribution, sub-package, and transportation None",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Paper Usage Reduction Percentage",
+      "value": "10 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Reduction in Paper Material Usage",
+      "value": "316 tons",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Glue Usage Reduction Percentage",
+      "value": "60 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Plastic Packaging Material Reduction",
+      "value": "31.4 tons",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Packaging Weight Reduction Percentage per Box",
+      "value": "5 %",
+      "category": "E - Waste",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Packaging Material Consumption Reduction (Million Tons)",
+      "value": "0.184 tons",
+      "category": "E - Waste",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Cartons Recycled via Cainiao Posts",
+      "value": "23.82 million",
+      "category": "E - Waste",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Packaging Material Reduction (Fiscal Year 2023)",
+      "value": "0.184 tons",
+      "category": "E - Waste",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Cartons Recycled via Cainiao Posts (Fiscal Year 2023)",
+      "value": "23.82 million",
+      "category": "E - Waste",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Food Waste Decrease Year-over-Year",
+      "value": "7.4 %",
+      "category": "E - Waste",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Electric Vehicle Usage Percentage",
+      "value": "33 %",
+      "category": "E - Transportation",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Emissions Reduction from Delivery Optimization",
+      "value": "28771.7 MtCO2e",
+      "category": "E - Transportation",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - CO2 Emissions Reduced Through Value Chain Intelligent Optimization",
+      "value": "28771.7 MtCO2e",
+      "category": "E - Transportation",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - CO2 Emissions Reduced via Delivery Route Optimization",
+      "value": "28771.7 MtCO2e",
+      "category": "E - Transportation",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Unnecessary CO2 Emissions Reduced Through Transport Optimization",
+      "value": "9690.9 MtCO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - CO2 Emissions Reduced Through Supply Chain Optimization",
+      "value": "9690.9 MtCO2e",
+      "category": "E - Transportation",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - LEED Gold Certified Building Area",
+      "value": "131000 None",
+      "category": "E - Buildings",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - LEED Gold Certified Square Meters as of March 31, 2023",
+      "value": "131000 None",
+      "category": "E - Buildings",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Construction Solid Waste Reduction at Gaoqiao Campus",
+      "value": "80 %",
+      "category": "E - Waste Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Lifecycle CO2 Emissions Reduction at Gaoqiao Campus",
+      "value": "28 %",
+      "category": "E - Buildings",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Supply Chain Emissions Reduction",
+      "value": "0.40 MMt CO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity (FY2022)",
+      "value": "9.2 MtCO2e per million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value Chain Carbon Intensity (FY2023)",
+      "value": "8.7 MtCO2e per million RMB",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Scope 3 Emissions Reduction",
+      "value": "8067.9 MtCO2e",
+      "category": "E - Carbon Emissions",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Female Employees",
+      "value": "73 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Women on the Board of Directors",
+      "value": "30 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Handicraft Shops Operated by Women",
+      "value": "50 %",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Women Employed",
+      "value": "38 million",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Female Live Streamers",
+      "value": "80 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Female Taobao Live Streamers",
+      "value": "80 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Women on the Board of Directors",
+      "value": "30 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Historical Percentage of Women on the Board of Directors",
+      "value": "20 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Women Directors",
+      "value": "30 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Female Members on the Board of Directors",
+      "value": "30 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Previous Percentage of Female Directors on the Board",
+      "value": "20 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Women on the Board",
+      "value": "30 %",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Number of Board Members",
+      "value": "10 None",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Independent Directors",
+      "value": "6 None",
+      "category": "G - Board Diversity",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Female Directors",
+      "value": "3 None",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Training Sessions Conducted",
+      "value": "100 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Class Attendances for E-commerce Training",
+      "value": "17 million",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Classes Offered at Training Bases",
+      "value": "1200 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Attendances at Training Bases",
+      "value": "190000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Employees Covered by Security Red Line Certification",
+      "value": "100 %",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Participation Rate in Training Programs",
+      "value": "100 %",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of New Employees Trained",
+      "value": "40 None",
+      "category": "S - Labor Standards",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Participation Rate in Training",
+      "value": "96.9 %",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Average Training Duration per Employee",
+      "value": "51 hours",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Employee Training Sessions Conducted",
+      "value": "80000 None",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Active Employees",
+      "value": "144789 None",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Video-Based Training Courses",
+      "value": "20 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Specialized Training Courses",
+      "value": "100 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Video-Based Specialized Training Courses",
+      "value": "20 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Specialized Training Courses Offered",
+      "value": "100 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Online Craftsmen Marketing Events",
+      "value": "400 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Online Marketing Events",
+      "value": "400 None",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Public Officials Trained",
+      "value": "140 None",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Entrepreneurs Trained",
+      "value": "4000 None",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Certification Recipients",
+      "value": "66000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Knowledge Products Created",
+      "value": "95 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Training Participants",
+      "value": "15000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Training Courses Offered",
+      "value": "200 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Trainees Benefited",
+      "value": "86000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Certificates Awarded",
+      "value": "56000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Resumes Received",
+      "value": "33000 None",
+      "category": "S - Human Resources",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Mutual Choice Training Sessions",
+      "value": "105 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Colleges and Universities Participating",
+      "value": "599 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Compliance Training Views",
+      "value": "10 million",
+      "category": "S - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of African MSMEs Trained in E-Commerce",
+      "value": "50 None",
+      "category": "S - Social: Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Training Attendances (All Programs)",
+      "value": "1720 None",
+      "category": "S - Social: Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Available Training Courses",
+      "value": "32 None",
+      "category": "S - Social: Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Available Training Lessons",
+      "value": "57 None",
+      "category": "S - Social: Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Annual Talent Cultivation through Regional Training Bases",
+      "value": "3000 None",
+      "category": "S - Social: Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Villages with Live Streamers Trained",
+      "value": "1402 None",
+      "category": "S - Social: Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Participants in E-Commerce Training Courses",
+      "value": "2500 None",
+      "category": "S - Social: Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Students Trained in Rural Revitalization Schools",
+      "value": "235 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Counties Covered by Rural Live Streaming Program",
+      "value": "1000 None",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Number of Trainees in Training Programs",
+      "value": "1.6 million",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Number of Doctors Trained",
+      "value": "14002 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Cardiovascular Specialists Trained",
+      "value": "3744 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Employees Covered by Training Programs",
+      "value": "100 %",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Training Participation Rate",
+      "value": "100 %",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Compliance and Risk Awareness Training Coverage",
+      "value": "100 %",
+      "category": "S - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Integrity Training Sessions Conducted",
+      "value": "377 None",
+      "category": "S - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Participants in Integrity Training Programs",
+      "value": "46883 None",
+      "category": "S - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - New Learning Materials Added",
+      "value": "33437 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Schools with Cloud Computer Rooms",
+      "value": "102 None",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Teachers Benefited by Cloud for Youth Program",
+      "value": "2000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Students Benefited by Cloud for Youth Program",
+      "value": "40000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Families Educated Through Employee Support Programs",
+      "value": "22 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Relief Funds Allocated for Employee Families",
+      "value": "11.29 million",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Data Analyst Certifications Earned by Employees",
+      "value": "15000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Schools Reached Through Cloud for Youth Program",
+      "value": "102 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Teachers and Students Reached Through Cloud for Youth Program",
+      "value": "60000 None",
+      "category": "S - Education & Training",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Sessions Conducted in the Lazada Experience Program",
+      "value": "22 None",
+      "category": "S - Diversity & Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employees Recognized with Awards",
+      "value": "758682 None",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Digital Management Certifications Obtained",
+      "value": "2.3 million",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - ESG Training Materials Distributed",
+      "value": "33437 None",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Certifications Obtained by Employees",
+      "value": "2.3 million",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Interactive Courses Offered",
+      "value": "53 None",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employees Participating in Learning Programs",
+      "value": "19630 None",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employees Certified as Data Analysts",
+      "value": "15000 None",
+      "category": "S - Employee",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Emergency Responders Trained",
+      "value": "5723 None",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Coverage for Safety Exams",
+      "value": "100 %",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of AEDs Equipped",
+      "value": "138 None",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Active Delivery Riders",
+      "value": "3.307 million",
+      "category": "S - Labor Standards",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Business Insurance Enrollment Rate",
+      "value": "100 %",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Emergency Protection Kits Distributed",
+      "value": "200000 None",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Emergency Response Designated Situations",
+      "value": "0 None",
+      "category": "S - Employee Health & Safety",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Parental Physical Examinations Provided",
+      "value": "64000 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Families Assisted with Critical Illnesses",
+      "value": "293 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Relief Funds Distributed",
+      "value": "11.29 million",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Annual Counseling Services Provided to Employees",
+      "value": "400 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Counseling Services Provided to Employee Families",
+      "value": "200 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Counseling Services Provided",
+      "value": "400 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Free Counseling Services Provided to Employee Families",
+      "value": "200 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Employees Participating in Mental Health Assessments",
+      "value": "3944 None",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Minimum Wage Paid to Employees",
+      "value": "local minimum wage standard None",
+      "category": "S - Labor Standards",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employees Assisted Through iHome Program",
+      "value": "1281 None",
+      "category": "S - Economic Development",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Minimum Hourly Wage for Part-Time Workers",
+      "value": "higher than the minimum hourly wage for local part-time labor None",
+      "category": "S - Labor Standards",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Full-Time Rider Wage Compliance",
+      "value": "no lower than the local minimum wage standard None",
+      "category": "S - Labor Standards",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Enrollment Rate in Benefits Programs",
+      "value": "100 %",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Relief Funds Distributed",
+      "value": "11.29 million",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - minimum_hourly_wage",
+      "value": "local minimum hourly wage for part-time labor None",
+      "category": "S - social",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - sales_of_rural_revitalization_counties",
+      "value": "4.3 billion",
+      "category": "S - social",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - impoverished_counties_sales",
+      "value": "130 billion",
+      "category": "S - social",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - rural_revitalization_counties_sales",
+      "value": "4.3 billion",
+      "category": "S - social",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - donation_amount",
+      "value": "399 million",
+      "category": "S - social",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - user_search_results_transformed",
+      "value": "8.52 million",
+      "category": "S - social",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - participants_in_philanthropic_guardian_action",
+      "value": "240000 None",
+      "category": "S - social",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of WeCare Taxi Assistance Stations",
+      "value": "3300 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Increase in WeCare Taxi Assistance Stations",
+      "value": "2000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Subsidies Granted to Rural Areas",
+      "value": "5 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Ecosystem Partners Involved in Rural Development",
+      "value": "100 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Services Provided in Rural Areas",
+      "value": "200 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Activities Held in Rural Communities",
+      "value": "50 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Digital Trade Shows Launched in Rural Areas",
+      "value": "11 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Merchants Attracted to Rural Markets",
+      "value": "20000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Local Manufacturers Collaborated With",
+      "value": "19 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Care Stations Opened",
+      "value": "100000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Women Participating in Training Programs",
+      "value": "500 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Freshippo Villages Established",
+      "value": "140 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Organic Freshippo Villages Established",
+      "value": "30 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Organic Vegetable Bases Established",
+      "value": "100 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Digital Collectibles Launched",
+      "value": "4 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Counties with WIG Community Plants",
+      "value": "4 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Job Opportunities Created in Rural Areas",
+      "value": "16368 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Village Clinics Renovated",
+      "value": "76 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Medical Devices Donated to Village Clinics",
+      "value": "13 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Public Welfare Organizations Cooperated With",
+      "value": "28 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Amount Donated for Earthquake Relief",
+      "value": "5 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Amount Spent on Oximeter Purchases for Donation",
+      "value": "125 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Charity Organizations Involved in Xin 100 Program",
+      "value": "64 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Orders from Merchants in Goods for Good Initiative",
+      "value": "82 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Merchants Participating in Goods for Good Initiative",
+      "value": "340000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Donations Raised via Alibaba Foundation",
+      "value": "4.44 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Employee Volunteering Hours",
+      "value": "250144 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Volunteering Hours by Employees",
+      "value": "250144 hours",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Voluntary Service Hours",
+      "value": "250144 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Employee Volunteer Teams Recruited",
+      "value": "1482 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Individuals Supported Through Volunteering Initiatives",
+      "value": "131750 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Effective Volunteer Reviews Conducted",
+      "value": "715951 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Participants in Volunteer Programs",
+      "value": "500000 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Volunteer Mentors Engaged",
+      "value": "200 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Technology Officers Dispatched for Volunteering",
+      "value": "220 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Counties Covered by Volunteer Activities",
+      "value": "12 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Employee Voluntary Service Hours",
+      "value": "250144 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Voluntary Ride-Sharing Participation",
+      "value": "118000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Voluntary Service Participation Count",
+      "value": "500000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Individual Employee Voluntary Service Hours",
+      "value": "687.7 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Emergency Volunteer Participation",
+      "value": "300 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Media Exposure During Alibaba Philanthropy Week",
+      "value": "2.84 billion",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Public Engagement During Alibaba Philanthropy Week",
+      "value": "8.77 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Participants Engaged in Alibaba Philanthropy Week",
+      "value": "260 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Charity Projects Initiated During Alibaba Philanthropy Week",
+      "value": "118 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Donations Raised in RMB During Alibaba Philanthropy Week",
+      "value": "33.41 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Caring Teams Established During Alibaba Philanthropy Week",
+      "value": "780 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Participants in Philanthropy Through Taobao and Alipay",
+      "value": "31.77 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Love Beans Charity Credits Distributed",
+      "value": "200 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of People Recognized for Philanthropy Contributions",
+      "value": "11722 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Awards Given During Alibaba Philanthropy Week",
+      "value": "100 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Activities Organized During Alibaba Philanthropy Week",
+      "value": "1800 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Active Hugs and Help Groups",
+      "value": "110 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Philanthropic Activities Conducted",
+      "value": "1000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Person-Times Assisted Through Philanthropy",
+      "value": "9 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of People Recognized by Daily Positive Energy Program",
+      "value": "11722 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Schools Reached by Cloud for Youth Program",
+      "value": "102 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Teachers and Students Served by Cloud for Youth Program",
+      "value": "60000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Philanthropic Donations",
+      "value": "10 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Donations Raised for Wildlife Conservation",
+      "value": "3 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Data Expansion from 2019",
+      "value": "440 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Data Expansion to 2023",
+      "value": "2680 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Enterprises Involved in Philanthropy",
+      "value": "5.3 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Philanthropy Award Recipient",
+      "value": "Ele.me's 'Cases of Social Co-governance of Online Catering' None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Apps Covered in Philanthropy",
+      "value": "3 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of SMEs Registered in Simpali",
+      "value": "700 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Families Educated Through Philanthropy Initiatives",
+      "value": "22 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Relief Funds Distributed Through Philanthropy Programs",
+      "value": "11.29 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Brands Implementing Low-Carbon Actions",
+      "value": "23 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Low-Carbon Friendly Products Available",
+      "value": "1.91 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Product Categories Offering Low-Carbon Options",
+      "value": "41 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Average Donation Amount per Collectible Item in Philanthropy Programs",
+      "value": "10 RMB",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Free Medical Consultation Sessions Provided",
+      "value": "37 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Counties Covered by Philanthropy",
+      "value": "31 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Provinces Covered by Philanthropy",
+      "value": "15 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Children Aided Through Philanthropy",
+      "value": "886 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Medical Supplies Delivered to Communities",
+      "value": "300 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Countries/Regions Receiving Supplies",
+      "value": "150 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Vaccine Doses Shipped as Part of Philanthropy",
+      "value": "1 million",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Individuals Recognized in Philanthropy Programs",
+      "value": "11722 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Seniors Screened in Philanthropy Initiatives",
+      "value": "118746 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Carpooling Parking Spaces Provided",
+      "value": "400 None",
+      "category": "E - Transportation",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Hugs and Help Activities Organized",
+      "value": "1000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Participants in Hugs and Help Philanthropy Programs",
+      "value": "30000 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of People Involved in Charity List Selection",
+      "value": "1600 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Charity Stars Awarded",
+      "value": "14 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Charity Organizations Digitalized via Green Code",
+      "value": "100 None",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Amount of Money Donated to Philanthropy Initiatives",
+      "value": "500000 RMB",
+      "category": "S - Community Engagement",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Value of Oximeter Donations",
+      "value": "125 million",
+      "category": "S - Health & Wellness",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Philanthropic Activities Supported",
+      "value": "22000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Village Clinics Covered by Philanthropy",
+      "value": "600000 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of National Honors Received for Social Contributions",
+      "value": "10 more than",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Local Government Commendations for Social Impact",
+      "value": "300 None",
+      "category": "S - Community",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Year-over-Year Growth in Suppliers Signed to ESG Code",
+      "value": "10 %",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Miao Embroidery Craftswomen Supported",
+      "value": "5000 None",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of People with Disabilities Employed Directly",
+      "value": "1450 None",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Supplier Compliance Inspection Pass Rate",
+      "value": "94 %",
+      "category": "S - Supply Chain Environmental Impact",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Jobs Created Through Supplier Engagement",
+      "value": "500 None",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Income Generated by Suppliers",
+      "value": "27 million",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Female Workers Recruited Through Suppliers",
+      "value": "469 None",
+      "category": "S - Supply Chain",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Board Independence Percentage",
+      "value": "60 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Female Employees",
+      "value": "49.1 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Female Members in Management Positions",
+      "value": "41.9 %",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Women on the Board",
+      "value": "30 %",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Number of Board Members",
+      "value": "10 None",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Board Independence Percentage",
+      "value": "60 %",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Board Independence Percentage",
+      "value": "60 %",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Independent Directors on the Board",
+      "value": "6 None",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Board Diversity and Independence Ratio",
+      "value": "diversity and independence in the composition None",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Female Employee Representation Percentage",
+      "value": "49.1 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Female Management Representation Percentage",
+      "value": "41.9 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Female Director Representation Percentage",
+      "value": "30 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Previous Female Director Representation Percentage",
+      "value": "20 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Female Board Member Representation Percentage",
+      "value": "30 %",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Employees with Physical Disabilities",
+      "value": "1451 None",
+      "category": "G - Board",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Total Number of Employees",
+      "value": "235216 None",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Women Directors on the Board",
+      "value": "30 %",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Previous Percentage of Women Directors on the Board",
+      "value": "20 %",
+      "category": "G - Governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage Increase in Female Directors on the Board",
+      "value": "10 %",
+      "category": "G - Board Diversity",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Coverage of Code of Conduct Training",
+      "value": "100 %",
+      "category": "G - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Employee Participation in Code of Conduct Exams",
+      "value": "100 %",
+      "category": "G - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of ESG Policies and Regulations Implemented",
+      "value": "300 None",
+      "category": "G - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Average Response Time for Data Privacy Incidents",
+      "value": "1 minute",
+      "category": "G - Data Privacy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Average Resolution Time for Data Privacy Issues",
+      "value": "5 None",
+      "category": "G - Data Privacy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Coverage of Green Initiatives Across Digital Platforms",
+      "value": "multiple APPs including Taobao, Idle Fish, and Youku None",
+      "category": "G - Ethics & Compliance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Year of Green Network Program Launch",
+      "value": "2020 None",
+      "category": "G - Ethics",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Security Certifications Held",
+      "value": "130 None",
+      "category": "G - Ethics",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage Increase in Contracted Suppliers",
+      "value": "10 %",
+      "category": "G - Ethics",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Global Security Compliance Standards Met",
+      "value": "130 None",
+      "category": "G - Ethics",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Abnormal Searches Identified Annually",
+      "value": "tens of billions billion",
+      "category": "G - Ethics",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Off-Design Situations",
+      "value": "1 None",
+      "category": "G - Risk Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Percentage of Doorstep Delivery Coverage",
+      "value": "74 %",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Areas Excluded from Doorstep Delivery Coverage",
+      "value": "rural areas and universities None",
+      "category": "S - Digital Inclusion",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Number of Harmful Searches Guided",
+      "value": "80 million",
+      "category": "G - Data Privacy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Year of GreenNet Program Upgrade",
+      "value": "2022 None",
+      "category": "E - Renewable Energy",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Frequency of Emergency Drills",
+      "value": "at least one emergency drill for different fields of different frequencies every year years",
+      "category": "G - Risk Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - Seismic Standard of Facilities",
+      "value": "first-class seismic standard None",
+      "category": "G - Risk Management",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - supplier_audit_coverage",
+      "value": "28 %",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - cases_of_employee_corruption_transferred_to_judicial_processing",
+      "value": "45 None",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    },
+    {
+      "metric": "Alibaba 2023 - cdp_climate_change_questionnaire_score",
+      "value": "B B",
+      "category": "G - governance",
+      "significance": "Unique to Alibaba 2023 ESG Report"
+    }
+  ],
+  "key_insights": [
+    "Alibaba 2022 ESG Report contains 307 metrics",
+    "Alibaba 2023 ESG Report contains 424 metrics",
+    "Found 77 semantically similar metrics between Alibaba 2022 and Alibaba 2023",
+    "Analysis performed using chunked approach with 4 x 5 chunk pairs"
+  ],
+  "analysis_timestamp": "2025-08-18T11:11:12.430945",
+  "companies": {
+    "company_a": {
+      "name": "Alibaba",
+      "year": "2022"
+    },
+    "company_b": {
+      "name": "Alibaba",
+      "year": "2023"
+    }
+  },
+  "analysis_method": "chunked",
+  "failed_chunks": 0
+}

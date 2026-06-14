@@ -1,0 +1,541 @@
+{% extends "base.html" %}
+
+{% block title %}ESG Dashboard - Home{% endblock %}
+{% block page_title %}Dashboard Overview{% endblock %}
+
+{% block content %}
+<div class="row">
+    <!-- Summary Cards -->
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                            Total Companies
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-companies">Loading...</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-building fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                            Total Metrics
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-metrics">Loading...</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-database fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                            Years Covered
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-years">Loading...</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-calendar fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-xl-3 col-md-6 mb-4">
+        <div class="card metric-card">
+            <div class="card-body">
+                <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                        <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                            Categories
+                        </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800" id="total-categories">Loading...</div>
+                    </div>
+                    <div class="col-auto">
+                        <i class="fas fa-tags fa-2x text-gray-300"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ESG Distribution Charts -->
+<div class="row">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-pie me-2"></i>
+                    ESG Area Distribution
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="esg-area-chart" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-chart-bar me-2"></i>
+                    Metrics by Company & Year
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="company-year-chart" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Top Categories and Importance Distribution -->
+<div class="row mt-4">
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-list me-2"></i>
+                    Top Categories
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="top-categories-chart" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-star me-2"></i>
+                    Importance Distribution
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="importance-chart" style="height: 300px;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Company Overview Table -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-table me-2"></i>
+                    Company Data Overview
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-hover" id="company-table">
+                        <thead>
+                            <tr>
+                                <th>Company</th>
+                                <th>Year</th>
+                                <th>Total Metrics</th>
+                                <th>Environmental</th>
+                                <th>Social</th>
+                                <th>Governance</th>
+                                <th>High Importance</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Data will be loaded dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Recent High-Importance Metrics -->
+<div class="row mt-4">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    High Importance Metrics
+                </h5>
+            </div>
+            <div class="card-body">
+                <div id="high-importance-metrics">
+                    <div class="text-center">
+                        <div class="spinner-border text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script>
+$(document).ready(function() {
+    // Load dashboard data
+    loadDashboardData();
+    
+    // Set active nav link
+    $('.nav-link[href="/"]').addClass('active');
+});
+
+function loadDashboardData() {
+    // Load ESG data
+    $.get('/api/data', function(data) {
+        console.log("Dashboard data loaded:", data);
+        updateDashboardStats(data);
+        updateCompanyTable(data);
+        createESGAreaChart(data);
+        createCompanyYearChart(data);
+        createTopCategoriesChart(data);
+        createImportanceChart(data);
+        loadHighImportanceMetrics(data);
+    }).fail(function(xhr, status, error) {
+        console.error("Failed to load dashboard data:", error);
+        showError("Failed to load dashboard data");
+    });
+}
+
+function updateDashboardStats(data) {
+    let totalMetrics = 0;
+    let companies = new Set();
+    let years = new Set();
+    let categories = new Set();
+    
+    Object.values(data).forEach(item => {
+        companies.add(item.company);
+        years.add(item.year);
+        
+        if (item.data && item.data.metrics) {
+            totalMetrics += item.data.metrics.length;
+            item.data.metrics.forEach(metric => {
+                if (metric.subcategory) {
+                    categories.add(metric.subcategory);
+                } else if (metric.category) {
+                    categories.add(metric.category);
+                }
+            });
+        }
+    });
+    
+    $('#total-companies').text(companies.size);
+    $('#total-metrics').text(totalMetrics.toLocaleString());
+    $('#total-years').text(years.size);
+    $('#total-categories').text(categories.size);
+}
+
+function updateQuickOverviewTable(data) {
+    const tbody = $('#quick-overview-table tbody');
+    tbody.empty();
+    
+    Object.entries(data).forEach(([key, item]) => {
+        if (item.data && item.data.metrics) {
+            const metrics = item.data.metrics;
+            const environmental = metrics.filter(m => m.area === 'E').length;
+            const social = metrics.filter(m => m.area === 'S').length;
+            const governance = metrics.filter(m => m.area === 'G').length;
+            const highImportance = metrics.filter(m => m.importance === 'High').length;
+            
+            // Get top 3 categories for this company/year
+            const categoryCounts = {};
+            metrics.forEach(metric => {
+                const category = metric.subcategory || metric.category || 'Unknown';
+                categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+            });
+            const topCategories = Object.entries(categoryCounts)
+                .sort(([,a], [,b]) => b - a)
+                .slice(0, 3)
+                .map(([category]) => category)
+                .join(', ');
+            
+            // Calculate data quality score (percentage of metrics with complete data)
+            const completeMetrics = metrics.filter(m => 
+                m.metric_name && m.value && (m.subcategory || m.category) && m.importance
+            ).length;
+            const dataQuality = Math.round((completeMetrics / metrics.length) * 100);
+            
+            // Determine recent updates (mock data for now)
+            const recentUpdates = Math.random() > 0.5 ? 'Updated' : 'Stable';
+            
+            const row = `
+                <tr>
+                    <td><strong>${item.company}</strong></td>
+                    <td><span class="badge bg-secondary">${item.year}</span></td>
+                    <td><span class="badge bg-primary">${metrics.length}</span></td>
+                    <td><span class="badge bg-success">${environmental}</span></td>
+                    <td><span class="badge bg-info">${social}</span></td>
+                    <td><span class="badge bg-warning">${governance}</span></td>
+                    <td><span class="badge bg-danger">${highImportance}</span></td>
+                    <td><small class="text-muted">${topCategories}</small></td>
+                    <td><span class="badge bg-${recentUpdates === 'Updated' ? 'success' : 'secondary'}">${recentUpdates}</span></td>
+                    <td><span class="badge bg-${dataQuality >= 80 ? 'success' : dataQuality >= 60 ? 'warning' : 'danger'}">${dataQuality}%</span></td>
+                </tr>
+            `;
+            tbody.append(row);
+        }
+    });
+}
+
+function updateCompanyTable(data) {
+    const tbody = $('#company-table tbody');
+    tbody.empty();
+    
+    Object.entries(data).forEach(([key, item]) => {
+        if (item.data && item.data.metrics) {
+            const metrics = item.data.metrics;
+            const environmental = metrics.filter(m => m.area === 'E').length;
+            const social = metrics.filter(m => m.area === 'S').length;
+            const governance = metrics.filter(m => m.area === 'G').length;
+            const highImportance = metrics.filter(m => m.importance === 'High').length;
+            
+            const row = `
+                <tr>
+                    <td><strong>${item.company}</strong></td>
+                    <td>${item.year}</td>
+                    <td><span class="badge bg-primary">${metrics.length}</span></td>
+                    <td><span class="badge bg-success">${environmental}</span></td>
+                    <td><span class="badge bg-info">${social}</span></td>
+                    <td><span class="badge bg-warning">${governance}</span></td>
+                    <td><span class="badge bg-danger">${highImportance}</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary" onclick="viewCompany('${item.company}', '${item.year}')">
+                            <i class="fas fa-eye"></i> View
+                        </button>
+                    </td>
+                </tr>
+            `;
+            tbody.append(row);
+        }
+    });
+}
+
+function createESGAreaChart(data) {
+    const areaCounts = { E: 0, S: 0, G: 0 };
+    
+    Object.values(data).forEach(item => {
+        if (item.data && item.data.metrics) {
+            item.data.metrics.forEach(metric => {
+                if (metric.area && areaCounts.hasOwnProperty(metric.area)) {
+                    areaCounts[metric.area]++;
+                }
+            });
+        }
+    });
+    
+    const trace = {
+        values: [areaCounts.E, areaCounts.S, areaCounts.G],
+        labels: ['Environmental', 'Social', 'Governance'],
+        type: 'pie',
+        marker: {
+            colors: ['#28a745', '#17a2b8', '#ffc107']
+        },
+        textinfo: 'label+percent+value',
+        textposition: 'inside'
+    };
+    
+    const layout = {
+        margin: { l: 20, r: 20, t: 20, b: 20 },
+        showlegend: false
+    };
+    
+    Plotly.newPlot('esg-area-chart', [trace], layout);
+}
+
+function createCompanyYearChart(data) {
+    const chartData = [];
+    
+    Object.entries(data).forEach(([key, item]) => {
+        if (item.data && item.data.metrics) {
+            chartData.push({
+                company: item.company,
+                year: item.year,
+                metrics: item.data.metrics.length
+            });
+        }
+    });
+    
+    const trace = {
+        x: chartData.map(d => `${d.company} ${d.year}`),
+        y: chartData.map(d => d.metrics),
+        type: 'bar',
+        marker: {
+            color: 'rgba(102, 126, 234, 0.8)'
+        }
+    };
+    
+    const layout = {
+        title: 'Metrics by Company & Year',
+        xaxis: { 
+            title: 'Company & Year',
+            tickangle: -45
+        },
+        yaxis: { title: 'Number of Metrics' },
+        margin: { l: 50, r: 50, t: 50, b: 80 }
+    };
+    
+    Plotly.newPlot('company-year-chart', [trace], layout);
+}
+
+function createTopCategoriesChart(data) {
+    const categoryCounts = {};
+    
+    Object.values(data).forEach(item => {
+        if (item.data && item.data.metrics) {
+            item.data.metrics.forEach(metric => {
+                const category = metric.subcategory || metric.category || 'Unknown';
+                categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+            });
+        }
+    });
+    
+    // Get top 10 categories
+    const sortedCategories = Object.entries(categoryCounts)
+        .sort(([,a], [,b]) => b - a)
+        .slice(0, 10);
+    
+    const trace = {
+        x: sortedCategories.map(([,count]) => count),
+        y: sortedCategories.map(([category]) => category),
+        type: 'bar',
+        orientation: 'h',
+        marker: {
+            color: 'rgba(40, 167, 69, 0.8)'
+        }
+    };
+    
+    const layout = {
+        title: 'Top 10 Categories',
+        xaxis: { title: 'Number of Metrics' },
+        yaxis: { title: 'Category' },
+        margin: { l: 150, r: 50, t: 50, b: 50 }
+    };
+    
+    Plotly.newPlot('top-categories-chart', [trace], layout);
+}
+
+function createImportanceChart(data) {
+    const importanceCounts = { High: 0, Medium: 0, Low: 0 };
+    
+    Object.values(data).forEach(item => {
+        if (item.data && item.data.metrics) {
+            item.data.metrics.forEach(metric => {
+                if (metric.importance && importanceCounts.hasOwnProperty(metric.importance)) {
+                    importanceCounts[metric.importance]++;
+                }
+            });
+        }
+    });
+    
+    const trace = {
+        values: [importanceCounts.High, importanceCounts.Medium, importanceCounts.Low],
+        labels: ['High', 'Medium', 'Low'],
+        type: 'pie',
+        marker: {
+            colors: ['#dc3545', '#ffc107', '#6c757d']
+        },
+        textinfo: 'label+percent+value',
+        textposition: 'inside'
+    };
+    
+    const layout = {
+        margin: { l: 20, r: 20, t: 20, b: 20 },
+        showlegend: false
+    };
+    
+    Plotly.newPlot('importance-chart', [trace], layout);
+}
+
+function loadHighImportanceMetrics(data) {
+    const highImportanceMetrics = [];
+    
+    Object.values(data).forEach(item => {
+        if (item.data && item.data.metrics) {
+            item.data.metrics.forEach(metric => {
+                if (metric.importance === 'High') {
+                    highImportanceMetrics.push({
+                        ...metric,
+                        company: item.company,
+                        year: item.year
+                    });
+                }
+            });
+        }
+    });
+    
+    // Sort by company and year, then take top 10
+    highImportanceMetrics.sort((a, b) => {
+        if (a.company !== b.company) return a.company.localeCompare(b.company);
+        return b.year - a.year;
+    });
+    
+    const recentDiv = $('#high-importance-metrics');
+    recentDiv.empty();
+    
+    if (highImportanceMetrics.length === 0) {
+        recentDiv.html('<p class="text-muted text-center">No high importance metrics found</p>');
+        return;
+    }
+    
+    highImportanceMetrics.slice(0, 10).forEach(metric => {
+        const category = metric.subcategory || metric.category || 'Unknown';
+        const areaColor = metric.area === 'E' ? 'success' : metric.area === 'S' ? 'info' : 'warning';
+        
+        const itemHtml = `
+            <div class="d-flex justify-content-between align-items-center mb-3 p-2 border-bottom">
+                <div class="flex-grow-1">
+                    <div class="fw-bold">${metric.metric_name || 'Unknown Metric'}</div>
+                    <small class="text-muted">${metric.company} ${metric.year}</small>
+                    <div class="small text-muted">${metric.value || 'N/A'} ${metric.unit || ''}</div>
+                </div>
+                <div class="text-end">
+                    <span class="badge bg-${areaColor} me-1">${metric.area || 'N/A'}</span>
+                    <span class="badge bg-danger">High</span>
+                </div>
+            </div>
+        `;
+        recentDiv.append(itemHtml);
+    });
+}
+
+function viewCompany(company, year) {
+    window.location.href = `/exploration?company=${encodeURIComponent(company)}&year=${encodeURIComponent(year)}`;
+}
+
+function showError(message) {
+    console.error(message);
+    // You can add a toast notification here if needed
+}
+</script>
+{% endblock %} 

@@ -1,0 +1,1482 @@
+{% extends "base.html" %}
+
+{% block title %}Benchmarking - Enhanced ESG Dashboard{% endblock %}
+
+{% block content %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            border-bottom: none;
+            padding: 1.5rem;
+            font-weight: 600;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .bg-gradient-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .text-primary {
+            color: #667eea !important;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .comparison-card {
+            border-left: 5px solid #667eea;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .metric-comparison {
+            background: white;
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+        }
+
+        .metric-value {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .metric-difference {
+            font-size: 0.9rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 15px;
+            font-weight: 600;
+        }
+
+        .difference-positive {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        .difference-negative {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+
+        .difference-neutral {
+            background-color: #e2e3e5;
+            color: #383d41;
+        }
+
+        .chart-container {
+            border-radius: 10px;
+            background: white;
+            padding: 1rem;
+        }
+
+        .loading-chart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 400px;
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        .loading-chart i {
+            margin-right: 10px;
+            color: #667eea;
+        }
+    </style>
+
+    <!-- Benchmarking Content -->
+    <div class="container-fluid mt-4">
+        <!-- Header Section -->
+        <div class="row mb-4">
+            <div class="col-12">
+                <div class="card shadow-sm">
+                    <div class="card-body text-center">
+                        <h2 class="card-title text-primary mb-2">
+                            <i class="fas fa-balance-scale me-2"></i>ESG Benchmarking Tool
+                        </h2>
+                        <p class="text-muted mb-0">Compare ESG metrics across different companies and years</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Selection Controls -->
+        <div class="row mb-4">
+            <div class="col-md-6 mb-3">
+                <div class="card comparison-card">
+                    <div class="card-header bg-gradient-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-building me-2"></i>Report A
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="companyA" class="form-label">Company</label>
+                                <select class="form-select" id="companyA">
+                                    <option value="">Select Company</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="yearA" class="form-label">Year</label>
+                                <select class="form-select" id="yearA">
+                                    <option value="">Select Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="reportAInfo" class="mt-3" style="display: none;">
+                            <div class="alert alert-info">
+                                <strong>Selected:</strong> <span id="reportASelection"></span>
+                                <br><small>Metrics: <span id="metricsCountA">0</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card comparison-card">
+                    <div class="card-header bg-gradient-success text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-building me-2"></i>Report B
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="companyB" class="form-label">Company</label>
+                                <select class="form-select" id="companyB">
+                                    <option value="">Select Company</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="yearB" class="form-label">Year</label>
+                                <select class="form-select" id="yearB">
+                                    <option value="">Select Year</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div id="reportBInfo" class="mt-3" style="display: none;">
+                            <div class="alert alert-success">
+                                <strong>Selected:</strong> <span id="reportBSelection"></span>
+                                <br><small>Metrics: <span id="metricsCountB">0</span></small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Compare Button -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <button class="btn btn-primary btn-lg" onclick="compareReports()" id="compareBtn" disabled>
+                    <i class="fas fa-balance-scale me-2"></i>Compare Reports
+                </button>
+            </div>
+        </div>
+
+        <!-- Comparison Results -->
+        <div id="comparisonResults" style="display: none;">
+            <!-- Summary Statistics -->
+            <div class="row mb-4">
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-primary text-white">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-pie fa-2x mb-2"></i>
+                            <h4 id="totalMetricsA">-</h4>
+                            <p class="mb-0">Report A Metrics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-success text-white">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-pie fa-2x mb-2"></i>
+                            <h4 id="totalMetricsB">-</h4>
+                            <p class="mb-0">Report B Metrics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-info text-white">
+                        <div class="card-body text-center">
+                            <i class="fas fa-exchange-alt fa-2x mb-2"></i>
+                            <h4 id="commonMetrics">-</h4>
+                            <p class="mb-0">Common Metrics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-warning text-white">
+                        <div class="card-body text-center">
+                            <i class="fas fa-percentage fa-2x mb-2"></i>
+                            <h4 id="overlapPercentage">-</h4>
+                            <p class="mb-0">Overlap %</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ESG Area Comparison -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chart-pie me-2"></i>ESG Area Distribution Comparison
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="esgAreaComparisonChart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Comparison -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-success text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-tags me-2"></i>Category Distribution Comparison
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="categoryComparisonChart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric Comparison Table -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-info text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-table me-2"></i>Metric Comparison
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-hover" id="metricComparisonTable">
+                                    <thead class="table-dark">
+                                        <tr>
+                                            <th>Metric Name</th>
+                                            <th>Category</th>
+                                            <th id="reportAHeader">Report A</th>
+                                            <th id="reportBHeader">Report B</th>
+                                            <th>Difference</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="metricComparisonBody">
+                                        <!-- Dynamic content -->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Value Distribution Comparison -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-warning text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chart-bar me-2"></i>Carbon Emissions Comparison
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="carbonEmissionsChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-info text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-leaf me-2"></i>Energy & Sustainability Metrics
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="energyMetricsChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional ESG Metrics Comparison -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-success text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-tint me-2"></i>Water & Waste Metrics
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="waterWasteChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-users me-2"></i>Social & Governance Metrics
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="socialGovernanceChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dynamic LLM Analysis with Timing -->
+            <div class="row mt-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-lightbulb me-2"></i>Dynamic LLM Analysis
+                                <span id="analysisTiming" class="badge bg-light text-dark ms-2" style="display: none;">
+                                    <i class="fas fa-clock me-1"></i><span id="timingText">0s</span>
+                                </span>
+                            </h5>
+                        </div>
+                        <div class="card-body" id="dynamicAnalysisSection">
+                            <!-- Analysis will be loaded here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let allReports = [];
+        let reportA = null;
+        let reportB = null;
+
+        // Load comprehensive unit conversion results
+        let unitConversionResults = {};
+        
+        // Load unit conversion data
+        function loadUnitConversionData() {
+            $.ajax({
+                url: '/api/unit_conversion_results',
+                method: 'GET',
+                success: function(data) {
+                    unitConversionResults = data;
+                    console.log('✅ Loaded unit conversion results');
+                },
+                error: function(xhr, status, error) {
+                    console.warn('⚠️ Could not load unit conversion results, using fallback:', error);
+                    // Use fallback standards if conversion data is not available
+                }
+            });
+        }
+
+        // Enhanced unit standardization function using comprehensive conversion results
+        function standardizeUnit(value, originalUnit, patternName) {
+            // Try to get conversion data from comprehensive results
+            const patternData = unitConversionResults[patternName];
+            
+            if (patternData && patternData.analysis && patternData.analysis.conversion_factors) {
+                const conversionFactors = patternData.analysis.conversion_factors;
+                const standardUnit = patternData.analysis.standard_unit;
+                
+                // Check if we have a conversion factor for this unit
+                if (conversionFactors[originalUnit]) {
+                    const factorInfo = conversionFactors[originalUnit];
+                    const factor = factorInfo.factor;
+                    
+                    // Skip currency-dependent conversions
+                    if (factor === 'N/A' || factorInfo.description?.includes('currency-dependent')) {
+                        return { 
+                            value: value, 
+                            unit: originalUnit,
+                            note: 'Currency-dependent - no conversion applied'
+                        };
+                    }
+                    
+                    // Apply conversion if factor is numeric
+                    if (typeof factor === 'number' && !isNaN(factor)) {
+                        const convertedValue = value * factor;
+                        return { 
+                            value: convertedValue, 
+                            unit: standardUnit,
+                            originalValue: value,
+                            originalUnit: originalUnit,
+                            conversionFactor: factor
+                        };
+                    }
+                }
+                
+                // If no specific conversion factor, return with standard unit
+                return { 
+                    value: value, 
+                    unit: standardUnit,
+                    originalUnit: originalUnit
+                };
+            }
+            
+            // Fallback to simple unit mapping
+            const fallbackStandards = {
+                'scope_emissions': 'MMT CO2e',
+                'carbon_metrics': 'MMT CO2e',
+                'carbon_intensity': 'kgCO2e per unit',
+                'energy_metrics': 'MWh',
+                'energy_consumption': 'MWh',
+                'renewable_energy': 'MWh',
+                'water_metrics': 'm³',
+                'waste_metrics': 'tons',
+                'employee_metrics': 'people',
+                'diversity_metrics': 'percentage',
+                'waste_recycling': 'percentage',
+                'safety_metrics': 'people',
+                'water_consumption': 'm³',
+                'waste_generation': 'tons',
+            };
+            
+            const standardUnit = fallbackStandards[patternName] || originalUnit;
+            return { 
+                value: value, 
+                unit: standardUnit,
+                originalUnit: originalUnit,
+                note: 'Fallback conversion'
+            };
+        }
+
+        // Ensure jQuery is loaded before running scripts
+        function waitForJQuery(callback) {
+            if (typeof jQuery !== 'undefined') {
+                callback();
+            } else {
+                setTimeout(() => waitForJQuery(callback), 100);
+            }
+        }
+
+        // Load available reports
+        function loadAvailableReports() {
+            $.ajax({
+                url: '/api/data',
+                method: 'GET',
+                success: function(data) {
+                    allReports = [];
+                    const companies = new Set();
+                    const years = new Set();
+                    
+                    Object.keys(data).forEach(key => {
+                        const report = data[key];
+                        allReports.push({
+                            key: key,
+                            company: report.company,
+                            year: report.year,
+                            metrics: report.data.metrics || []
+                        });
+                        companies.add(report.company);
+                        years.add(report.year);
+                    });
+                    
+                    // Populate dropdowns
+                    populateDropdowns(companies, years);
+                    console.log(`📊 Loaded ${allReports.length} reports`);
+                },
+                error: function(xhr, status, error) {
+                    console.error("Failed to load reports:", error);
+                }
+            });
+        }
+
+        // Populate dropdowns
+        function populateDropdowns(companies, years) {
+            // Company dropdowns
+            const companyOptions = Array.from(companies).sort().map(company => 
+                `<option value="${company}">${company}</option>`
+            ).join('');
+            
+            $('#companyA, #companyB').each(function() {
+                $(this).find('option:not(:first)').remove();
+                $(this).append(companyOptions);
+            });
+            
+            // Year dropdowns
+            const yearOptions = Array.from(years).sort().map(year => 
+                `<option value="${year}">${year}</option>`
+            ).join('');
+            
+            $('#yearA, #yearB').each(function() {
+                $(this).find('option:not(:first)').remove();
+                $(this).append(yearOptions);
+            });
+        }
+
+        // Update report selection
+        function updateReportSelection() {
+            const companyA = $('#companyA').val();
+            const yearA = $('#yearA').val();
+            const companyB = $('#companyB').val();
+            const yearB = $('#yearB').val();
+            
+            // Find selected reports
+            reportA = allReports.find(r => r.company === companyA && r.year === yearA);
+            reportB = allReports.find(r => r.company === companyB && r.year === yearB);
+            
+            // Update info displays
+            if (reportA) {
+                $('#reportASelection').text(`${reportA.company} (${reportA.year})`);
+                $('#metricsCountA').text(reportA.metrics.length);
+                $('#reportAInfo').show();
+            } else {
+                $('#reportAInfo').hide();
+            }
+            
+            if (reportB) {
+                $('#reportBSelection').text(`${reportB.company} (${reportB.year})`);
+                $('#metricsCountB').text(reportB.metrics.length);
+                $('#reportBInfo').show();
+            } else {
+                $('#reportBInfo').hide();
+            }
+            
+            // Enable/disable compare button
+            $('#compareBtn').prop('disabled', !(reportA && reportB));
+        }
+
+        // Compare reports
+        function compareReports() {
+            if (!reportA || !reportB) {
+                alert('Please select both reports to compare');
+                return;
+            }
+            
+            console.log('🔄 Comparing reports...');
+            $('#comparisonResults').show();
+            
+            // Update headers
+            $('#reportAHeader').text(`${reportA.company} (${reportA.year})`);
+            $('#reportBHeader').text(`${reportB.company} (${reportB.year})`);
+            
+            // Calculate statistics
+            calculateComparisonStats();
+            
+            // Create visualizations
+            createComparisonCharts();
+            
+            // Create comparison table
+            createComparisonTable();
+            
+            // Load dynamic LLM comparison analysis
+            loadDynamicComparisonAnalysis();
+        }
+
+        // Load dynamic LLM comparison analysis
+        function loadDynamicComparisonAnalysis() {
+            const companyA = reportA.company;
+            const yearA = reportA.year;
+            const companyB = reportB.company;
+            const yearB = reportB.year;
+            
+            console.log(`🔄 Loading dynamic comparison analysis for ${companyA} ${yearA} vs ${companyB} ${yearB}`);
+            
+            // Show loading state with timing
+            $('#dynamicAnalysisSection').html(`
+                <div class="text-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Analyzing reports with LLM...</p>
+                    <p class="text-muted small">Estimated time: 30-60 seconds for large datasets</p>
+                </div>
+            `);
+            
+            // Show timing badge
+            $('#analysisTiming').show();
+            const startTime = Date.now();
+            
+            // Update timing every second
+            const timingInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                $('#timingText').text(`${elapsed}s`);
+            }, 1000);
+            
+            $.ajax({
+                url: `/api/dynamic-comparison/${companyA}/${yearA}/${companyB}/${yearB}`,
+                method: 'GET',
+                success: function(analysis) {
+                    clearInterval(timingInterval);
+                    const totalTime = Math.floor((Date.now() - startTime) / 1000);
+                    $('#timingText').text(`${totalTime}s`);
+                    
+                    console.log('✅ Dynamic comparison analysis loaded');
+                    displayDynamicComparisonAnalysis(analysis);
+                },
+                error: function(xhr, status, error) {
+                    clearInterval(timingInterval);
+                    const totalTime = Math.floor((Date.now() - startTime) / 1000);
+                    $('#timingText').text(`${totalTime}s`);
+                    
+                    console.error('❌ Failed to load dynamic comparison:', error);
+                    $('#dynamicAnalysisSection').html(`
+                        <div class="alert alert-warning">
+                            <i class="fas fa-exclamation-triangle me-2"></i>
+                            Failed to load dynamic comparison analysis. Using basic comparison instead.
+                            <br><small class="text-muted">Analysis time: ${totalTime} seconds</small>
+                        </div>
+                    `);
+                }
+            });
+        }
+
+        // Display dynamic comparison analysis
+        function displayDynamicComparisonAnalysis(analysis) {
+            const summary = analysis.comparison_summary;
+            const similarMetrics = analysis.similar_metrics || [];
+            const uniqueMetricsA = analysis.unique_metrics_a || [];
+            const uniqueMetricsB = analysis.unique_metrics_b || [];
+            const keyInsights = analysis.key_insights || [];
+            
+            // Get specific report names
+            const reportAName = `${reportA.company} ${reportA.year} ESG Report`;
+            const reportBName = `${reportB.company} ${reportB.year} ESG Report`;
+            
+            let html = `
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">
+                            <i class="fas fa-brain me-2"></i>LLM Analysis Summary
+                        </h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h4 class="text-primary">${summary.total_metrics_a}</h4>
+                                    <p class="mb-0">${reportAName} Metrics</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h4 class="text-success">${summary.total_metrics_b}</h4>
+                                    <p class="mb-0">${reportBName} Metrics</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h4 class="text-info">${summary.similar_metrics}</h4>
+                                    <p class="mb-0">Similar Metrics</p>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="text-center">
+                                    <h4 class="text-warning">${summary.overall_comparability}</h4>
+                                    <p class="mb-0">Comparability</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add similar metrics section
+            if (similarMetrics.length > 0) {
+                html += `
+                    <div class="card mt-3">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-link me-2"></i>Similar Metrics (${similarMetrics.length})
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>${reportAName} Metric</th>
+                                            <th>${reportBName} Metric</th>
+                                            <th>Value A (with units)</th>
+                                            <th>Value B (with units)</th>
+                                            <th>Category</th>
+                                            <th>Confidence</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                `;
+                
+                similarMetrics.forEach(metric => {
+                    html += `
+                        <tr>
+                            <td>${metric.metric_a}</td>
+                            <td>${metric.metric_b}</td>
+                            <td><strong>${metric.value_a}</strong></td>
+                            <td><strong>${metric.value_b}</strong></td>
+                            <td>${metric.category}</td>
+                            <td>
+                                <span class="badge bg-${metric.similarity_confidence === 'High' ? 'success' : metric.similarity_confidence === 'Medium' ? 'warning' : 'secondary'}">
+                                    ${metric.similarity_confidence}
+                                </span>
+                            </td>
+                        </tr>
+                    `;
+                });
+                
+                html += `
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Add unique metrics sections
+            if (uniqueMetricsA.length > 0) {
+                html += `
+                    <div class="card mt-3">
+                        <div class="card-header bg-info text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-star me-2"></i>Unique to ${reportAName} (${uniqueMetricsA.length})
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Metric</th>
+                                            <th>Value (with units)</th>
+                                            <th>Category</th>
+                                            <th>Significance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                `;
+                
+                uniqueMetricsA.forEach(metric => {
+                    html += `
+                        <tr>
+                            <td>${metric.metric}</td>
+                            <td><strong>${metric.value}</strong></td>
+                            <td>${metric.category}</td>
+                            <td>${metric.significance}</td>
+                        </tr>
+                    `;
+                });
+                
+                html += `
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            if (uniqueMetricsB.length > 0) {
+                html += `
+                    <div class="card mt-3">
+                        <div class="card-header bg-warning text-dark">
+                            <h5 class="mb-0">
+                                <i class="fas fa-star me-2"></i>Unique to ${reportBName} (${uniqueMetricsB.length})
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <th>Metric</th>
+                                            <th>Value (with units)</th>
+                                            <th>Category</th>
+                                            <th>Significance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                `;
+                
+                uniqueMetricsB.forEach(metric => {
+                    html += `
+                        <tr>
+                            <td>${metric.metric}</td>
+                            <td><strong>${metric.value}</strong></td>
+                            <td>${metric.category}</td>
+                            <td>${metric.significance}</td>
+                        </tr>
+                    `;
+                });
+                
+                html += `
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            // Add key insights
+            if (keyInsights.length > 0) {
+                html += `
+                    <div class="card mt-3">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-lightbulb me-2"></i>Key Insights
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                `;
+                
+                keyInsights.forEach(insight => {
+                    html += `<li class="list-group-item">${insight}</li>`;
+                });
+                
+                html += `
+                            </ul>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            $('#dynamicAnalysisSection').html(html);
+        }
+
+        // Calculate comparison statistics
+        function calculateComparisonStats() {
+            const metricsA = reportA.metrics.length;
+            const metricsB = reportB.metrics.length;
+            
+            // Find common metrics
+            const commonMetrics = findCommonMetrics();
+            
+            $('#totalMetricsA').text(metricsA);
+            $('#totalMetricsB').text(metricsB);
+            $('#commonMetrics').text(commonMetrics.length);
+            
+            const overlapPercentage = Math.round((commonMetrics.length / Math.max(metricsA, metricsB)) * 100);
+            $('#overlapPercentage').text(overlapPercentage + '%');
+        }
+
+        // Find common metrics between reports
+        function findCommonMetrics() {
+            const metricsA = reportA.metrics.map(m => m.metric_name?.toLowerCase() || '');
+            const metricsB = reportB.metrics.map(m => m.metric_name?.toLowerCase() || '');
+            
+            return metricsA.filter(metric => metricsB.includes(metric));
+        }
+
+        // Create comparison charts
+        function createComparisonCharts() {
+            // ESG Area Comparison
+            createESGAreaComparison();
+            
+            // Category Comparison
+            createCategoryComparison();
+            
+            // Specific ESG Metrics Charts
+            createEmissionsChart();
+            createEnergyChart();
+            createWaterWasteChart();
+            createSocialGovernanceChart();
+        }
+
+        // Create ESG Area comparison chart
+        function createESGAreaComparison() {
+            const areasA = countByProperty(reportA.metrics, 'area');
+            const areasB = countByProperty(reportB.metrics, 'area');
+            
+            const allAreas = [...new Set([...Object.keys(areasA), ...Object.keys(areasB)])];
+            
+            const trace1 = {
+                x: allAreas,
+                y: allAreas.map(area => areasA[area] || 0),
+                name: `${reportA.company} (${reportA.year})`,
+                type: 'bar',
+                marker: {color: '#667eea'}
+            };
+            
+            const trace2 = {
+                x: allAreas,
+                y: allAreas.map(area => areasB[area] || 0),
+                name: `${reportB.company} (${reportB.year})`,
+                type: 'bar',
+                marker: {color: '#11998e'}
+            };
+            
+            const layout = {
+                title: 'ESG Area Distribution Comparison',
+                barmode: 'group',
+                xaxis: {title: 'ESG Area'},
+                yaxis: {title: 'Number of Metrics'},
+                legend: {x: 0, y: 1}
+            };
+            
+            Plotly.newPlot('esgAreaComparisonChart', [trace1, trace2], layout);
+        }
+
+        // Create Category comparison chart
+        function createCategoryComparison() {
+            const categoriesA = countByProperty(reportA.metrics, 'category');
+            const categoriesB = countByProperty(reportB.metrics, 'category');
+            
+            const allCategories = [...new Set([...Object.keys(categoriesA), ...Object.keys(categoriesB)])].slice(0, 15);
+            
+            const trace1 = {
+                x: allCategories.map(cat => categoriesA[cat] || 0),
+                y: allCategories,
+                name: `${reportA.company} (${reportA.year})`,
+                type: 'bar',
+                orientation: 'h',
+                marker: {color: '#667eea'}
+            };
+            
+            const trace2 = {
+                x: allCategories.map(cat => categoriesB[cat] || 0),
+                y: allCategories,
+                name: `${reportB.company} (${reportB.year})`,
+                type: 'bar',
+                orientation: 'h',
+                marker: {color: '#11998e'}
+            };
+            
+            const layout = {
+                title: 'Top Categories Comparison',
+                barmode: 'group',
+                xaxis: {title: 'Number of Metrics'},
+                yaxis: {title: 'Category'},
+                legend: {x: 0, y: 1}
+            };
+            
+            Plotly.newPlot('categoryComparisonChart', [trace1, trace2], layout);
+        }
+
+        // Create emissions comparison chart with unit conversion info
+        function createEmissionsChart() {
+            const data = extractEmissionsData();
+            if (data.length === 0) {
+                $('#carbonEmissionsChart').html('<p class="text-muted">No comparable emissions data found</p>');
+                return;
+            }
+            
+            const trace1 = {
+                x: data.map(d => d.metric),
+                y: data.map(d => d.valueA),
+                name: `${reportA.company} (${reportA.year})`,
+                type: 'bar',
+                marker: { color: '#667eea' }
+            };
+            
+            const trace2 = {
+                x: data.map(d => d.metric),
+                y: data.map(d => d.valueB),
+                name: `${reportB.company} (${reportB.year})`,
+                type: 'bar',
+                marker: { color: '#764ba2' }
+            };
+            
+            const layout = {
+                title: 'Carbon Emissions Comparison (Standardized Units)',
+                xaxis: { title: 'Metrics' },
+                yaxis: { title: 'Emissions' },
+                barmode: 'group',
+                height: 400
+            };
+            
+            // Add conversion info to hover text
+            trace1.text = data.map(d => {
+                let info = `Value: ${d.valueA}`;
+                if (d.originalUnitA !== d.standardUnit) {
+                    info += `<br>Converted from: ${d.originalUnitA}`;
+                    if (d.conversionFactor) {
+                        info += `<br>Conversion factor: ${d.conversionFactor}`;
+                    }
+                }
+                if (d.note) {
+                    info += `<br>Note: ${d.note}`;
+                }
+                return info;
+            });
+            
+            trace2.text = data.map(d => {
+                let info = `Value: ${d.valueB}`;
+                if (d.originalUnitB !== d.standardUnit) {
+                    info += `<br>Converted from: ${d.originalUnitB}`;
+                    if (d.conversionFactor) {
+                        info += `<br>Conversion factor: ${d.conversionFactor}`;
+                    }
+                }
+                if (d.note) {
+                    info += `<br>Note: ${d.note}`;
+                }
+                return info;
+            });
+            
+            Plotly.newPlot('carbonEmissionsChart', [trace1, trace2], layout);
+        }
+
+        // Create energy metrics chart with unit conversion info
+        function createEnergyChart() {
+            const data = extractEnergyData();
+            if (data.length === 0) {
+                $('#energyMetricsChart').html('<p class="text-muted">No comparable energy data found</p>');
+                return;
+            }
+            
+            const trace1 = {
+                x: data.map(d => d.metric),
+                y: data.map(d => d.valueA),
+                name: `${reportA.company} (${reportA.year})`,
+                type: 'bar',
+                marker: { color: '#17a2b8' }
+            };
+            
+            const trace2 = {
+                x: data.map(d => d.metric),
+                y: data.map(d => d.valueB),
+                name: `${reportB.company} (${reportB.year})`,
+                type: 'bar',
+                marker: { color: '#6f42c1' }
+            };
+            
+            const layout = {
+                title: 'Energy & Sustainability Metrics (Standardized Units)',
+                xaxis: { title: 'Metrics' },
+                yaxis: { title: 'Energy' },
+                barmode: 'group',
+                height: 400
+            };
+            
+            // Add conversion info to hover text
+            trace1.text = data.map(d => {
+                let info = `Value: ${d.valueA}`;
+                if (d.originalUnitA !== d.standardUnit) {
+                    info += `<br>Converted from: ${d.originalUnitA}`;
+                    if (d.conversionFactor) {
+                        info += `<br>Conversion factor: ${d.conversionFactor}`;
+                    }
+                }
+                if (d.note) {
+                    info += `<br>Note: ${d.note}`;
+                }
+                return info;
+            });
+            
+            trace2.text = data.map(d => {
+                let info = `Value: ${d.valueB}`;
+                if (d.originalUnitB !== d.standardUnit) {
+                    info += `<br>Converted from: ${d.originalUnitB}`;
+                    if (d.conversionFactor) {
+                        info += `<br>Conversion factor: ${d.conversionFactor}`;
+                    }
+                }
+                if (d.note) {
+                    info += `<br>Note: ${d.note}`;
+                }
+                return info;
+            });
+            
+            Plotly.newPlot('energyMetricsChart', [trace1, trace2], layout);
+        }
+
+        // Create Water & Waste metrics chart
+        function createWaterWasteChart() {
+            const waterWasteData = extractWaterWasteData();
+            
+            if (waterWasteData.length === 0) {
+                $('#waterWasteChart').html('<div class="text-center text-muted">No water/waste data available</div>');
+                return;
+            }
+            
+            const trace1 = {
+                x: waterWasteData.map(d => d.metric),
+                y: waterWasteData.map(d => d.valueA),
+                name: `${reportA.company} (${reportA.year})`,
+                type: 'bar',
+                marker: {color: '#17a2b8'}
+            };
+            
+            const trace2 = {
+                x: waterWasteData.map(d => d.metric),
+                y: waterWasteData.map(d => d.valueB),
+                name: `${reportB.company} (${reportB.year})`,
+                type: 'bar',
+                marker: {color: '#6f42c1'}
+            };
+            
+            const layout = {
+                title: 'Water & Waste Metrics (Standardized Units)',
+                barmode: 'group',
+                xaxis: {title: 'Metric Type'},
+                yaxis: {title: 'Value'},
+                legend: {x: 0, y: 1},
+                height: 400
+            };
+            
+            Plotly.newPlot('waterWasteChart', [trace1, trace2], layout);
+        }
+
+        // Create Social & Governance metrics chart
+        function createSocialGovernanceChart() {
+            const socialData = extractSocialGovernanceData();
+            
+            if (socialData.length === 0) {
+                $('#socialGovernanceChart').html('<div class="text-center text-muted">No social/governance data available</div>');
+                return;
+            }
+            
+            const trace1 = {
+                x: socialData.map(d => d.metric),
+                y: socialData.map(d => d.valueA),
+                name: `${reportA.company} (${reportA.year})`,
+                type: 'bar',
+                marker: {color: '#fd7e14'}
+            };
+            
+            const trace2 = {
+                x: socialData.map(d => d.metric),
+                y: socialData.map(d => d.valueB),
+                name: `${reportB.company} (${reportB.year})`,
+                type: 'bar',
+                marker: {color: '#e83e8c'}
+            };
+            
+            const layout = {
+                title: 'Social & Governance Metrics (Standardized Units)',
+                barmode: 'group',
+                xaxis: {title: 'Metric Type'},
+                yaxis: {title: 'Value'},
+                legend: {x: 0, y: 1},
+                height: 400
+            };
+            
+            Plotly.newPlot('socialGovernanceChart', [trace1, trace2], layout);
+        }
+
+        // Extract emissions data with comprehensive unit conversion
+        function extractEmissionsData() {
+            const emissionsKeywords = [
+                'scope 1', 'scope 2', 'scope 3', 'carbon', 'co2', 'emissions', 'greenhouse gas',
+                'carbon intensity', 'emissions intensity'
+            ];
+            
+            const data = [];
+            
+            reportA.metrics.forEach(metricA => {
+                const metricName = metricA.metric_name?.toLowerCase() || '';
+                if (emissionsKeywords.some(keyword => metricName.includes(keyword))) {
+                    const metricB = reportB.metrics.find(m => 
+                        m.metric_name?.toLowerCase().includes(metricName.split(' ').slice(-2).join(' ')) ||
+                        metricName.includes(m.metric_name?.toLowerCase().split(' ').slice(-2).join(' '))
+                    );
+                    
+                    if (metricB) {
+                        const valueA = parseFloat(metricA.value) || 0;
+                        const valueB = parseFloat(metricB.value) || 0;
+                        const unitA = metricA.unit || '';
+                        const unitB = metricB.unit || '';
+                        
+                        // Determine pattern based on metric type
+                        let pattern = 'scope_emissions';
+                        if (metricName.includes('intensity')) {
+                            pattern = 'carbon_intensity';
+                        } else if (metricName.includes('carbon') && !metricName.includes('scope')) {
+                            pattern = 'carbon_metrics';
+                        }
+                        
+                        // Apply comprehensive unit standardization
+                        const standardizedA = standardizeUnit(valueA, unitA, pattern);
+                        const standardizedB = standardizeUnit(valueB, unitB, pattern);
+                        
+                        data.push({
+                            metric: metricA.metric_name,
+                            valueA: standardizedA.value,
+                            valueB: standardizedB.value,
+                            originalUnitA: standardizedA.originalUnit || unitA,
+                            originalUnitB: standardizedB.originalUnit || unitB,
+                            standardUnit: standardizedA.unit,
+                            conversionFactor: standardizedA.conversionFactor,
+                            note: standardizedA.note
+                        });
+                    }
+                }
+            });
+            
+            return data.slice(0, 8); // Limit to top 8
+        }
+
+        // Extract energy data with comprehensive unit conversion
+        function extractEnergyData() {
+            const energyKeywords = [
+                'energy', 'electricity', 'renewable', 'consumption', 'generation', 'efficiency'
+            ];
+            
+            const data = [];
+            
+            reportA.metrics.forEach(metricA => {
+                const metricName = metricA.metric_name?.toLowerCase() || '';
+                if (energyKeywords.some(keyword => metricName.includes(keyword))) {
+                    const metricB = reportB.metrics.find(m => 
+                        m.metric_name?.toLowerCase().includes(metricName.split(' ').slice(-2).join(' ')) ||
+                        metricName.includes(m.metric_name?.toLowerCase().split(' ').slice(-2).join(' '))
+                    );
+                    
+                    if (metricB) {
+                        const valueA = parseFloat(metricA.value) || 0;
+                        const valueB = parseFloat(metricB.value) || 0;
+                        const unitA = metricA.unit || '';
+                        const unitB = metricB.unit || '';
+                        
+                        // Determine pattern based on metric type
+                        let pattern = 'energy_metrics';
+                        if (metricName.includes('consumption')) {
+                            pattern = 'energy_consumption';
+                        } else if (metricName.includes('renewable')) {
+                            pattern = 'renewable_energy';
+                        }
+                        
+                        // Apply comprehensive unit standardization
+                        const standardizedA = standardizeUnit(valueA, unitA, pattern);
+                        const standardizedB = standardizeUnit(valueB, unitB, pattern);
+                        
+                        data.push({
+                            metric: metricA.metric_name,
+                            valueA: standardizedA.value,
+                            valueB: standardizedB.value,
+                            originalUnitA: standardizedA.originalUnit || unitA,
+                            originalUnitB: standardizedB.originalUnit || unitB,
+                            standardUnit: standardizedA.unit,
+                            conversionFactor: standardizedA.conversionFactor,
+                            note: standardizedA.note
+                        });
+                    }
+                }
+            });
+            
+            return data.slice(0, 8); // Limit to top 8
+        }
+
+        // Extract water and waste data
+        function extractWaterWasteData() {
+            const waterWasteKeywords = [
+                'water', 'waste', 'recycling', 'reuse', 'consumption', 'withdrawal',
+                'treatment', 'disposal'
+            ];
+            
+            const data = [];
+            
+            reportA.metrics.forEach(metricA => {
+                const metricName = metricA.metric_name?.toLowerCase() || '';
+                if (waterWasteKeywords.some(keyword => metricName.includes(keyword))) {
+                    const metricB = reportB.metrics.find(m => 
+                        m.metric_name?.toLowerCase().includes(metricName.split(' ').slice(-2).join(' ')) ||
+                        metricName.includes(m.metric_name?.toLowerCase().split(' ').slice(-2).join(' '))
+                    );
+                    
+                    if (metricB) {
+                        const valueA = parseFloat(metricA.value) || 0;
+                        const valueB = parseFloat(metricB.value) || 0;
+                        const unitA = metricA.unit || 'N/A';
+                        const unitB = metricB.unit || 'N/A';
+                        
+                        // Determine pattern based on metric type
+                        const pattern = metricName.includes('water') ? 'water_metrics' : 'waste_metrics';
+                        
+                        // Apply unit standardization
+                        const standardizedA = standardizeUnit(valueA, unitA, pattern);
+                        const standardizedB = standardizeUnit(valueB, unitB, pattern);
+                        
+                        data.push({
+                            metric: metricA.metric_name,
+                            valueA: standardizedA.value,
+                            valueB: standardizedB.value,
+                            originalUnitA: unitA,
+                            originalUnitB: unitB,
+                            standardUnit: standardizedA.unit,
+                            conversionFactor: standardizedA.conversionFactor,
+                            note: standardizedA.note
+                        });
+                    }
+                }
+            });
+            
+            return data.slice(0, 8); // Limit to top 8
+        }
+
+        // Extract social and governance data
+        function extractSocialGovernanceData() {
+            const socialKeywords = [
+                'diversity', 'inclusion', 'employee', 'workforce', 'training', 'safety',
+                'governance', 'compliance', 'ethics', 'corruption'
+            ];
+            
+            const data = [];
+            
+            reportA.metrics.forEach(metricA => {
+                const metricName = metricA.metric_name?.toLowerCase() || '';
+                if (socialKeywords.some(keyword => metricName.includes(keyword))) {
+                    const metricB = reportB.metrics.find(m => 
+                        m.metric_name?.toLowerCase().includes(metricName.split(' ').slice(-2).join(' ')) ||
+                        metricName.includes(m.metric_name?.toLowerCase().split(' ').slice(-2).join(' '))
+                    );
+                    
+                    if (metricB) {
+                        const valueA = parseFloat(metricA.value) || 0;
+                        const valueB = parseFloat(metricB.value) || 0;
+                        const unitA = metricA.unit || 'N/A';
+                        const unitB = metricB.unit || 'N/A';
+                        
+                        // Determine pattern based on metric type
+                        let pattern = 'employee_metrics';
+                        if (metricName.includes('diversity') || metricName.includes('inclusion')) {
+                            pattern = 'diversity_metrics';
+                        } else if (metricName.includes('safety')) {
+                            pattern = 'safety_metrics';
+                        }
+                        
+                        // Apply unit standardization
+                        const standardizedA = standardizeUnit(valueA, unitA, pattern);
+                        const standardizedB = standardizeUnit(valueB, unitB, pattern);
+                        
+                        data.push({
+                            metric: metricA.metric_name,
+                            valueA: standardizedA.value,
+                            valueB: standardizedB.value,
+                            originalUnitA: unitA,
+                            originalUnitB: unitB,
+                            standardUnit: standardizedA.unit,
+                            conversionFactor: standardizedA.conversionFactor,
+                            note: standardizedA.note
+                        });
+                    }
+                }
+            });
+            
+            return data.slice(0, 8); // Limit to top 8
+        }
+
+        // Create comparison table
+        function createComparisonTable() {
+            const commonMetrics = findCommonMetrics();
+            const tableBody = $('#metricComparisonBody');
+            tableBody.empty();
+            
+            commonMetrics.forEach(metricName => {
+                const metricA = reportA.metrics.find(m => m.metric_name?.toLowerCase() === metricName);
+                const metricB = reportB.metrics.find(m => m.metric_name?.toLowerCase() === metricName);
+                
+                if (metricA && metricB) {
+                    const valueA = metricA.value || 'N/A';
+                    const valueB = metricB.value || 'N/A';
+                    const category = metricA.category || metricB.category || 'Unknown';
+                    
+                    let difference = 'N/A';
+                    let status = 'neutral';
+                    
+                    if (valueA !== 'N/A' && valueB !== 'N/A') {
+                        const numA = parseFloat(valueA);
+                        const numB = parseFloat(valueB);
+                        
+                        if (!isNaN(numA) && !isNaN(numB)) {
+                            const diff = numB - numA;
+                            difference = diff > 0 ? `+${diff.toFixed(2)}` : diff.toFixed(2);
+                            status = diff > 0 ? 'positive' : diff < 0 ? 'negative' : 'neutral';
+                        }
+                    }
+                    
+                    const row = `
+                        <tr>
+                            <td>${metricName}</td>
+                            <td>${category}</td>
+                            <td class="metric-value">${valueA}</td>
+                            <td class="metric-value">${valueB}</td>
+                            <td><span class="metric-difference difference-${status}">${difference}</span></td>
+                            <td>
+                                <span class="badge bg-${status === 'positive' ? 'success' : status === 'negative' ? 'danger' : 'secondary'}">
+                                    ${status === 'positive' ? 'Higher' : status === 'negative' ? 'Lower' : 'Same'}
+                                </span>
+                            </td>
+                        </tr>
+                    `;
+                    
+                    tableBody.append(row);
+                }
+            });
+        }
+
+        // Helper functions
+        function countByProperty(array, property) {
+            return array.reduce((acc, item) => {
+                const value = item[property] || 'Unknown';
+                acc[value] = (acc[value] || 0) + 1;
+                return acc;
+            }, {});
+        }
+
+        function extractNumericValues(metrics) {
+            return metrics
+                .map(m => parseFloat(m.value))
+                .filter(val => !isNaN(val))
+                .slice(0, 50); // Limit to first 50 for performance
+        }
+
+        // Event listeners
+        waitForJQuery(function() {
+            loadAvailableReports();
+            loadUnitConversionData(); // Load unit conversion data
+            
+            // Update selection when dropdowns change
+            $('#companyA, #yearA, #companyB, #yearB').on('change', updateReportSelection);
+        });
+    </script>
+{% endblock %} 

@@ -1,0 +1,28 @@
+# Core dependencies
+prompter>=0.1.0
+
+# Data processing
+pandas>=2.3.1
+pydantic>=2.11.7
+
+# PDF processing
+PyPDF2>=3.0.0
+pdfplumber>=0.10.0
+
+# LLM and API
+openai>=1.0.0
+ollama>=0.5.1
+instructor>=1.10.0
+
+# Text processing
+semantic-text-splitter>=0.25.1
+tokenizers>=0.21.1
+tiktoken>=0.9.0
+
+# Utilities
+loguru>=0.7.3
+pathlib2>=2.3.7
+
+# Development and testing
+pytest>=8.4.1
+pytest-cov>=6.2.1 

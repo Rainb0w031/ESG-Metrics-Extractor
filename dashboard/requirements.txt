@@ -1,0 +1,8 @@
+# ESG Dashboard (Flask) dependencies
+# The dashboard reuses the parent metrics/ package for API config (extract.api),
+# so run it from within the metrics project environment.
+Flask>=3.0.0
+pandas>=2.0.0
+plotly>=5.17.0
+numpy>=1.24.0
+requests>=2.31.0

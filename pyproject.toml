@@ -1,0 +1,60 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "metrics-esg"
+version = "0.1.0"
+description = "A modular ESG processing toolkit that leverages the prompter project for LLM interactions"
+readme = "README.md"
+license = {text = "MIT"}
+authors = [
+    {name = "ESG Processing Team"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+]
+requires-python = ">=3.11"
+dependencies = [
+    "prompter-local @ file:///C:/Users/18139/Desktop/Cursor%20Project/prompter-main",
+    "pandas>=2.3.1",
+    "pydantic>=2.11.7",
+    "PyPDF2>=3.0.0",
+    "pdfplumber>=0.10.0",
+    "openai>=1.0.0",
+    "ollama>=0.5.1",
+    "instructor>=1.10.0",
+    "semantic-text-splitter>=0.25.1",
+    "tokenizers>=0.21.1",
+    "tiktoken>=0.9.0",
+    "loguru>=0.7.3",
+    "pathlib2>=2.3.7",
+    "json-repair>=0.44.1",
+    "pymupdf>=1.26.4",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-cov>=6.2.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/your-org/metrics-esg"
+Repository = "https://github.com/your-org/metrics-esg"
+Issues = "https://github.com/your-org/metrics-esg/issues"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+packages = ["metrics"] 

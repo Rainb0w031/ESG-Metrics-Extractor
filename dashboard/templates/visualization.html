@@ -1,0 +1,1730 @@
+{% extends "base.html" %}
+
+{% block title %}Data Visualization - Enhanced ESG Dashboard{% endblock %}
+
+{% block content %}
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.9) !important;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+
+        .card {
+            border: none;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .card-header {
+            border-bottom: none;
+            padding: 1.5rem;
+            font-weight: 600;
+        }
+
+        .card-body {
+            padding: 1.5rem;
+        }
+
+        .bg-gradient-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-success {
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        }
+
+        .bg-gradient-info {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .bg-gradient-warning {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .bg-gradient-danger {
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+        }
+
+        .bg-gradient-secondary {
+            background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        }
+
+        .text-primary {
+            color: #667eea !important;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 25px;
+            padding: 10px 25px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .stats-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .stats-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+
+        .stats-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+
+        .stats-label {
+            color: #6c757d;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .loading-chart {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 300px;
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        .loading-chart i {
+            margin-right: 10px;
+            color: #667eea;
+        }
+
+        /* Chart container styling */
+        #esgAreaChart, #categoryChart, #companyChart, #yearChart, 
+        #importanceChart, #heatmapChart, 
+        #areaByCompanyChart, #categoryByCompanyChart, 
+        #unitDistributionChart, #typeDistributionChart,
+        #metricBirthChart, #metricDisappearanceChart,
+        #reportESGAreaChart, #reportCategoryChart, #reportImportanceChart,
+        #reportUnitChart, #reportValueChart {
+            border-radius: 10px;
+            background: white;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .card-body {
+                padding: 1rem;
+            }
+            
+            .card-header {
+                padding: 1rem;
+            }
+            
+            #esgAreaChart, #categoryChart, #companyChart, #yearChart, 
+            #importanceChart, #heatmapChart, 
+            #areaByCompanyChart, #categoryByCompanyChart, 
+            #unitDistributionChart, #typeDistributionChart,
+            #metricBirthChart, #metricDisappearanceChart,
+            #reportESGAreaChart, #reportCategoryChart, #reportImportanceChart,
+            #reportUnitChart, #reportValueChart {
+                height: 300px !important;
+            }
+        }
+
+        /* Animation for cards */
+        .card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Stagger animation for multiple cards */
+        .row .col-md-3:nth-child(1) .card { animation-delay: 0.1s; }
+        .row .col-md-3:nth-child(2) .card { animation-delay: 0.2s; }
+        .row .col-md-3:nth-child(3) .card { animation-delay: 0.3s; }
+        .row .col-md-3:nth-child(4) .card { animation-delay: 0.4s; }
+    </style>
+
+        <!-- Visualization Content -->
+        <div class="container-fluid mt-4">
+            <!-- Header Section -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-body text-center">
+                            <h2 class="card-title text-primary mb-2">
+                                <i class="fas fa-chart-line me-2"></i>ESG Data Visualizations
+                            </h2>
+                            <p class="text-muted mb-0">Comprehensive analytics and insights from ESG reports</p>
+                            <div class="mt-3">
+                                <button class="btn btn-primary" onclick="refreshCharts()">
+                                    <i class="fas fa-sync-alt me-2"></i>Refresh Charts
+                                </button>
+                                <button class="btn btn-secondary ms-2" onclick="testAPI()">
+                                    <i class="fas fa-test me-2"></i>Test API
+                                </button>
+                                <button class="btn btn-info ms-2" onclick="simpleTest()">
+                                    <i class="fas fa-check me-2"></i>Simple Test
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Statistics Cards -->
+            <div class="row mb-4">
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-primary text-white shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-chart-pie fa-2x mb-2"></i>
+                            <h4 id="totalMetrics">-</h4>
+                            <p class="mb-0">Total Metrics</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-success text-white shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-building fa-2x mb-2"></i>
+                            <h4 id="totalCompanies">-</h4>
+                            <p class="mb-0">Companies</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-info text-white shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-calendar fa-2x mb-2"></i>
+                            <h4 id="totalYears">-</h4>
+                            <p class="mb-0">Years</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mb-3">
+                    <div class="card bg-warning text-white shadow-sm">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tags fa-2x mb-2"></i>
+                            <h4 id="totalCategories">-</h4>
+                            <p class="mb-0">Categories</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Debug Section -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-secondary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-bug me-2"></i>Debug Information
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="debugInfo">
+                                <p>Loading debug information...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ESG Area Distribution - Full Width -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chart-pie me-2"></i>ESG Area Distribution
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="esgAreaChart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company and Year Distribution - Side by Side -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-success text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-building me-2"></i>Company Distribution
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="companyChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-info text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-calendar me-2"></i>Year Distribution
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="yearChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Distribution - Full Width -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-warning text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-tags me-2"></i>Top ESG Categories
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="categoryChart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Company-Year Heatmap - Full Width -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-danger text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-th me-2"></i>Metrics by Company and Year
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="heatmapChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ESG Areas by Company and Categories by Company - Side by Side -->
+            <div class="row mb-4">
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chart-bar me-2"></i>ESG Areas by Company
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="areaByCompanyChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-gradient-success text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chart-bar me-2"></i>Top Categories by Company
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="categoryByCompanyChart" style="height: 400px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Importance Distribution - Full Width -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-warning text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-star me-2"></i>Metrics by Importance Level
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="importanceChart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Unit Distribution - Full Width -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-danger text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-ruler me-2"></i>Top Units Used
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="unitDistributionChart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Type Distribution - Full Width -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-secondary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-chart-pie me-2"></i>Metrics by Type
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div id="typeDistributionChart" style="height: 500px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Metric Lifecycle Tracking - Full Width -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-history me-2"></i>Metric Lifecycle Tracking
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <h6 class="text-primary">Metric Birth Timeline</h6>
+                                    <div id="metricBirthChart" style="height: 400px;"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <h6 class="text-primary">Metric Disappearance Analysis</h6>
+                                    <div id="metricDisappearanceChart" style="height: 400px;"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Report-Specific Visualizations -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-gradient-info text-white">
+                            <h5 class="mb-0">
+                                <i class="fas fa-search me-2"></i>Report-Specific Analysis
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Report Selection -->
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label for="reportSelector" class="form-label">Select Report:</label>
+                                    <select id="reportSelector" class="form-select" onchange="loadReportSpecificCharts()">
+                                        <option value="">Choose a report...</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-8">
+                                    <div id="selectedReportInfo" class="alert alert-info" style="display: none;">
+                                        <strong>Selected Report:</strong> <span id="reportInfoText"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Report-Specific Charts -->
+                            <div id="reportSpecificCharts" style="display: none;">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card border-primary">
+                                            <div class="card-header bg-primary text-white">
+                                                <h6 class="mb-0">ESG Area Distribution</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="reportESGAreaChart" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card border-success">
+                                            <div class="card-header bg-success text-white">
+                                                <h6 class="mb-0">Top Categories</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="reportCategoryChart" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card border-warning">
+                                            <div class="card-header bg-warning text-white">
+                                                <h6 class="mb-0">Importance Distribution</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="reportImportanceChart" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="card border-danger">
+                                            <div class="card-header bg-danger text-white">
+                                                <h6 class="mb-0">Unit Distribution</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="reportUnitChart" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-12">
+                                        <div class="card border-info">
+                                            <div class="card-header bg-info text-white">
+                                                <h6 class="mb-0">Metric Value Distribution</h6>
+                                            </div>
+                                            <div class="card-body">
+                                                <div id="reportValueChart" style="height: 300px;"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<script>
+let vizData = {};
+let allMetrics = [];
+
+// Ensure jQuery is loaded before running scripts
+function waitForJQuery(callback) {
+    if (typeof jQuery !== 'undefined') {
+        callback();
+    } else {
+        setTimeout(() => waitForJQuery(callback), 100);
+    }
+}
+
+// Update statistics cards
+function updateStatistics() {
+    if (allMetrics.length > 0) {
+        const companies = [...new Set(allMetrics.map(m => m.company))];
+        const years = [...new Set(allMetrics.map(m => m.year))];
+        const categories = [...new Set(allMetrics.map(m => m.category).filter(c => c))];
+        
+        $('#totalMetrics').text(allMetrics.length);
+        $('#totalCompanies').text(companies.length);
+        $('#totalYears').text(years.length);
+        $('#totalCategories').text(categories.length);
+        
+        console.log(`📊 Statistics updated: ${allMetrics.length} metrics, ${companies.length} companies, ${years.length} years, ${categories.length} categories`);
+        
+        // Update debug info
+        updateDebugInfo();
+    } else {
+        console.log("⚠️ No metrics available for statistics");
+        $('#debugInfo').html('<p class="text-danger">No metrics loaded!</p>');
+    }
+}
+
+// Update debug information
+function updateDebugInfo() {
+    const companies = [...new Set(allMetrics.map(m => m.company))];
+    const years = [...new Set(allMetrics.map(m => m.year))];
+    const categories = [...new Set(allMetrics.map(m => m.category).filter(c => c))];
+    
+    const debugHtml = `
+        <div class="row">
+            <div class="col-md-3">
+                <strong>Total Metrics:</strong> ${allMetrics.length}
+            </div>
+            <div class="col-md-3">
+                <strong>Companies:</strong> ${companies.join(', ')}
+            </div>
+            <div class="col-md-3">
+                <strong>Years:</strong> ${years.join(', ')}
+            </div>
+            <div class="col-md-3">
+                <strong>Categories:</strong> ${categories.length}
+            </div>
+        </div>
+        <div class="row mt-3">
+            <div class="col-12">
+                <strong>Sample Metrics:</strong>
+                <ul>
+                    ${allMetrics.slice(0, 5).map(m => `<li>${m.metric_name} (${m.company} ${m.year})</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    $('#debugInfo').html(debugHtml);
+}
+
+// Load visualizations
+function loadVisualizations() {
+    console.log("🔄 Loading visualizations...");
+    
+    // Update statistics first
+    updateStatistics();
+    
+    // Instead of loading pre-generated charts, we'll create them directly from the raw data
+    createChartsFromRawData();
+}
+
+// Create charts directly from raw data (like benchmarking page)
+function createChartsFromRawData() {
+    console.log("🔄 Creating charts from raw data...");
+    
+    if (allMetrics.length === 0) {
+        console.error("❌ No metrics available for charts");
+        return;
+    }
+    
+    // 1. ESG Area Distribution
+    createESGAreaChart();
+    
+    // 2. Category Distribution
+    createCategoryChart();
+    
+    // 3. Company Distribution
+    createCompanyChart();
+    
+    // 4. Year Distribution
+    createYearChart();
+    
+    // 5. Importance Distribution
+    createImportanceChart();
+    
+    // 6. Unit Distribution
+    createUnitDistributionChart();
+    
+    // 7. Type Distribution
+    createTypeDistributionChart();
+
+    // 8. Company-Year Heatmap
+    createCompanyYearHeatmap();
+
+    // 9. ESG Areas by Company
+    createAreaByCompanyChart();
+
+    // 10. Top Categories by Company
+    createCategoryByCompanyChart();
+    
+    // 11. Metric Lifecycle Tracking
+    createMetricLifecycleCharts();
+    
+    // 12. Populate Report Selector
+    populateReportSelector();
+    
+    console.log("✅ All charts created from raw data");
+}
+
+// Create ESG Area chart
+function createESGAreaChart() {
+    const areaCounts = {};
+    allMetrics.forEach(metric => {
+        const area = metric.area || 'Unknown';
+        areaCounts[area] = (areaCounts[area] || 0) + 1;
+    });
+    
+    const areas = Object.keys(areaCounts);
+    const values = areas.map(area => areaCounts[area]);
+    
+    const trace = {
+        values: values,
+        labels: areas,
+        type: 'pie',
+        marker: {
+            colors: ['#28a745', '#ffc107', '#17a2b8']
+        }
+    };
+    
+    const layout = {
+        title: 'ESG Area Distribution',
+        showlegend: true
+    };
+    
+    Plotly.newPlot('esgAreaChart', [trace], layout);
+    console.log("✅ Created ESG Area chart with real data");
+}
+
+// Create Category chart
+function createCategoryChart() {
+    const categoryCounts = {};
+    allMetrics.forEach(metric => {
+        const category = metric.category || 'Unknown';
+        categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    });
+    
+    // Get top 15 categories
+    const sortedCategories = Object.entries(categoryCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 15);
+    
+    const categories = sortedCategories.map(([cat, _]) => cat);
+    const values = sortedCategories.map(([_, count]) => count);
+    
+    const trace = {
+        x: values,
+        y: categories,
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#667eea'}
+    };
+    
+    const layout = {
+        title: 'Top ESG Categories',
+        xaxis: {title: 'Number of Metrics'},
+        yaxis: {title: 'Category'}
+    };
+    
+    Plotly.newPlot('categoryChart', [trace], layout);
+    console.log("✅ Created Category chart with real data");
+}
+
+// Create Company chart
+function createCompanyChart() {
+    const companyCounts = {};
+    allMetrics.forEach(metric => {
+        const company = metric.company || 'Unknown';
+        companyCounts[company] = (companyCounts[company] || 0) + 1;
+    });
+    
+    const companies = Object.keys(companyCounts);
+    const values = companies.map(company => companyCounts[company]);
+    
+    const trace = {
+        values: values,
+        labels: companies,
+        type: 'pie',
+        marker: {color: '#667eea'}
+    };
+    
+    const layout = {
+        title: 'Metrics by Company',
+        showlegend: true
+    };
+    
+    Plotly.newPlot('companyChart', [trace], layout);
+    console.log("✅ Created Company chart with real data");
+}
+
+// Create Year chart
+function createYearChart() {
+    const yearCounts = {};
+    allMetrics.forEach(metric => {
+        const year = metric.year || 'Unknown';
+        yearCounts[year] = (yearCounts[year] || 0) + 1;
+    });
+    
+    const years = Object.keys(yearCounts).sort();
+    const values = years.map(year => yearCounts[year]);
+    
+    const trace = {
+        x: years,
+        y: values,
+        type: 'bar',
+        marker: {color: '#11998e'}
+    };
+    
+    const layout = {
+        title: 'Metrics by Year',
+        xaxis: {title: 'Year'},
+        yaxis: {title: 'Number of Metrics'}
+    };
+    
+    Plotly.newPlot('yearChart', [trace], layout);
+    console.log("✅ Created Year chart with real data");
+}
+
+// Create Importance chart
+function createImportanceChart() {
+    const importanceCounts = {};
+    allMetrics.forEach(metric => {
+        const importance = metric.importance || 'Unknown';
+        importanceCounts[importance] = (importanceCounts[importance] || 0) + 1;
+    });
+    
+    const importances = Object.keys(importanceCounts);
+    const values = importances.map(imp => importanceCounts[imp]);
+    
+    const trace = {
+        values: values,
+        labels: importances,
+        type: 'pie',
+        marker: {
+            colors: ['#dc3545', '#fd7e14', '#20c997']
+        }
+    };
+    
+    const layout = {
+        title: 'Metrics by Importance Level',
+        showlegend: true
+    };
+    
+    Plotly.newPlot('importanceChart', [trace], layout);
+    console.log("✅ Created Importance chart with real data");
+}
+
+// Create Unit Distribution chart
+function createUnitDistributionChart() {
+    const unitCounts = {};
+    allMetrics.forEach(metric => {
+        const unit = metric.unit || 'No unit';
+        unitCounts[unit] = (unitCounts[unit] || 0) + 1;
+    });
+    
+    // Get top 10 units
+    const sortedUnits = Object.entries(unitCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    const units = sortedUnits.map(([unit, _]) => unit);
+    const values = sortedUnits.map(([_, count]) => count);
+    
+    const trace = {
+        x: values,
+        y: units,
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#fd7e14'}
+    };
+    
+    const layout = {
+        title: 'Top Units Used',
+        xaxis: {title: 'Number of Metrics'},
+        yaxis: {title: 'Unit'}
+    };
+    
+    Plotly.newPlot('unitDistributionChart', [trace], layout);
+    console.log("✅ Created Unit Distribution chart with real data");
+}
+
+// Create Type Distribution chart
+function createTypeDistributionChart() {
+    const typeCounts = {};
+    allMetrics.forEach(metric => {
+        const type = metric.type || 'Unknown';
+        typeCounts[type] = (typeCounts[type] || 0) + 1;
+    });
+    
+    const types = Object.keys(typeCounts);
+    const values = types.map(type => typeCounts[type]);
+    
+    const trace = {
+        values: values,
+        labels: types,
+        type: 'pie',
+        marker: {color: '#17a2b8'}
+    };
+    
+    const layout = {
+        title: 'Metrics by Type',
+        showlegend: true
+    };
+    
+    Plotly.newPlot('typeDistributionChart', [trace], layout);
+    console.log("✅ Created Type Distribution chart with real data");
+}
+
+// Create Company-Year Heatmap
+function createCompanyYearHeatmap() {
+    const companyYearCounts = {};
+    
+    // Count metrics by company and year
+    allMetrics.forEach(metric => {
+        const company = metric.company || 'Unknown';
+        const year = metric.year || 'Unknown';
+        const key = `${company}-${year}`;
+        companyYearCounts[key] = (companyYearCounts[key] || 0) + 1;
+    });
+    
+    // Get unique companies and years
+    const companies = [...new Set(allMetrics.map(m => m.company))];
+    const years = [...new Set(allMetrics.map(m => m.year))].sort();
+    
+    // Create heatmap data
+    const heatmapData = companies.map(company => {
+        return years.map(year => {
+            const key = `${company}-${year}`;
+            return companyYearCounts[key] || 0;
+        });
+    });
+    
+    const trace = {
+        z: heatmapData,
+        x: years,
+        y: companies,
+        type: 'heatmap',
+        colorscale: 'Blues',
+        colorbar: {title: 'Number of Metrics'}
+    };
+    
+    const layout = {
+        title: 'Metrics by Company and Year',
+        xaxis: {title: 'Year'},
+        yaxis: {title: 'Company'}
+    };
+    
+    Plotly.newPlot('heatmapChart', [trace], layout);
+    console.log("✅ Created Company-Year Heatmap with real data");
+}
+
+// Create ESG Areas by Company chart
+function createAreaByCompanyChart() {
+    const areaCompanyCounts = {};
+    
+    // Count metrics by area and company
+    allMetrics.forEach(metric => {
+        const area = metric.area || 'Unknown';
+        const company = metric.company || 'Unknown';
+        const key = `${area}-${company}`;
+        areaCompanyCounts[key] = (areaCompanyCounts[key] || 0) + 1;
+    });
+    
+    // Get unique areas and companies
+    const areas = [...new Set(allMetrics.map(m => m.area))];
+    const companies = [...new Set(allMetrics.map(m => m.company))];
+    
+    // Create traces for each company
+    const traces = companies.map(company => {
+        const data = areas.map(area => {
+            const key = `${area}-${company}`;
+            return areaCompanyCounts[key] || 0;
+        });
+        
+        return {
+            x: areas,
+            y: data,
+            name: company,
+            type: 'bar',
+            marker: {color: company === 'Amazon' ? '#667eea' : '#11998e'}
+        };
+    });
+    
+    const layout = {
+        title: 'ESG Areas by Company',
+        xaxis: {title: 'ESG Area'},
+        yaxis: {title: 'Number of Metrics'},
+        barmode: 'group'
+    };
+    
+    Plotly.newPlot('areaByCompanyChart', traces, layout);
+    console.log("✅ Created ESG Areas by Company chart with real data");
+}
+
+// Create Top Categories by Company chart
+function createCategoryByCompanyChart() {
+    const categoryCompanyCounts = {};
+    
+    // Count metrics by category and company
+    allMetrics.forEach(metric => {
+        const category = metric.category || 'Unknown';
+        const company = metric.company || 'Unknown';
+        const key = `${category}-${company}`;
+        categoryCompanyCounts[key] = (categoryCompanyCounts[key] || 0) + 1;
+    });
+    
+    // Get top 10 categories overall
+    const categoryCounts = {};
+    allMetrics.forEach(metric => {
+        const category = metric.category || 'Unknown';
+        categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    });
+    
+    const topCategories = Object.entries(categoryCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10)
+        .map(([cat, _]) => cat);
+    
+    const companies = [...new Set(allMetrics.map(m => m.company))];
+    
+    // Create traces for each company
+    const traces = companies.map(company => {
+        const data = topCategories.map(category => {
+            const key = `${category}-${company}`;
+            return categoryCompanyCounts[key] || 0;
+        });
+        
+        return {
+            x: topCategories,
+            y: data,
+            name: company,
+            type: 'bar',
+            marker: {color: company === 'Amazon' ? '#667eea' : '#11998e'}
+        };
+    });
+    
+    const layout = {
+        title: 'Top Categories by Company',
+        xaxis: {title: 'Category'},
+        yaxis: {title: 'Number of Metrics'},
+        barmode: 'group'
+    };
+    
+    Plotly.newPlot('categoryByCompanyChart', traces, layout);
+    console.log("✅ Created Top Categories by Company chart with real data");
+}
+
+// Create Metric Lifecycle Tracking Charts
+function createMetricLifecycleCharts() {
+    createMetricBirthChart();
+    createMetricDisappearanceChart();
+    createCompanySpecificLifecycleCharts();
+}
+
+// Create Improved Metric Birth Timeline Chart
+function createMetricBirthChart() {
+    // Find first appearance of each metric globally
+    const metricFirstAppearance = {};
+    
+    allMetrics.forEach(metric => {
+        const metricName = metric.metric_name;
+        const year = parseInt(metric.year);
+        
+        if (!metricFirstAppearance[metricName] || year < metricFirstAppearance[metricName]) {
+            metricFirstAppearance[metricName] = year;
+        }
+    });
+    
+    // Count new metrics by year
+    const newMetricsByYear = {};
+    Object.values(metricFirstAppearance).forEach(year => {
+        newMetricsByYear[year] = (newMetricsByYear[year] || 0) + 1;
+    });
+    
+    // Sort years and get data
+    const years = Object.keys(newMetricsByYear).sort((a, b) => parseInt(a) - parseInt(b));
+    const counts = years.map(year => newMetricsByYear[year]);
+    
+    const trace = {
+        x: years,
+        y: counts,
+        mode: 'lines+markers',
+        type: 'scatter',
+        name: 'New Metrics (Global)',
+        line: {color: '#667eea', width: 3},
+        marker: {size: 8}
+    };
+    
+    const layout = {
+        title: 'Global Metric Birth Timeline - First Appearance of Metrics',
+        xaxis: {title: 'Year'},
+        yaxis: {title: 'Number of New Metrics'},
+        hovermode: 'closest'
+    };
+    
+    Plotly.newPlot('metricBirthChart', [trace], layout);
+    console.log("✅ Created Improved Metric Birth Timeline chart");
+}
+
+// Create Improved Metric Disappearance Analysis Chart
+function createMetricDisappearanceChart() {
+    const metricHistory = {};
+    
+    // Track all appearances for each metric
+    allMetrics.forEach(metric => {
+        const metricName = metric.metric_name;
+        const year = parseInt(metric.year);
+        
+        if (!metricHistory[metricName]) {
+            metricHistory[metricName] = [];
+        }
+        metricHistory[metricName].push(year);
+    });
+    
+    // Find gaps in reporting (disappearances)
+    const years = [...new Set(allMetrics.map(m => parseInt(m.year)))].sort();
+    const disappearancesByYear = {};
+    
+    Object.keys(metricHistory).forEach(metricName => {
+        const appearances = metricHistory[metricName].sort();
+        
+        // Find gaps in reporting
+        for (let i = 0; i < appearances.length - 1; i++) {
+            const currentYear = appearances[i];
+            const nextYear = appearances[i + 1];
+            
+            // If there's a gap, count disappearances
+            if (nextYear - currentYear > 1) {
+                for (let gapYear = currentYear + 1; gapYear < nextYear; gapYear++) {
+                    disappearancesByYear[gapYear] = (disappearancesByYear[gapYear] || 0) + 1;
+                }
+            }
+        }
+        
+        // Check if metric disappeared after last appearance (not in most recent year)
+        const lastAppearance = Math.max(...appearances);
+        const mostRecentYear = Math.max(...years);
+        if (lastAppearance < mostRecentYear) {
+            for (let gapYear = lastAppearance + 1; gapYear <= mostRecentYear; gapYear++) {
+                disappearancesByYear[gapYear] = (disappearancesByYear[gapYear] || 0) + 1;
+            }
+        }
+    });
+    
+    const disappearanceYears = Object.keys(disappearancesByYear).sort((a, b) => parseInt(a) - parseInt(b));
+    const disappearanceCounts = disappearanceYears.map(year => disappearancesByYear[year]);
+    
+    const trace = {
+        x: disappearanceYears,
+        y: disappearanceCounts,
+        type: 'bar',
+        marker: {color: '#dc3545'},
+        name: 'Disappeared Metrics'
+    };
+    
+    const layout = {
+        title: 'Global Metric Disappearance Analysis',
+        xaxis: {title: 'Year'},
+        yaxis: {title: 'Number of Disappeared Metrics'}
+    };
+    
+    Plotly.newPlot('metricDisappearanceChart', [trace], layout);
+    console.log("✅ Created Improved Metric Disappearance Analysis chart");
+}
+
+// Create Company-Specific Lifecycle Charts
+function createCompanySpecificLifecycleCharts() {
+    const companies = [...new Set(allMetrics.map(m => m.company))];
+    
+    // Create container for company-specific charts
+    const lifecycleContainer = document.createElement('div');
+    lifecycleContainer.id = 'companyLifecycleCharts';
+    lifecycleContainer.className = 'row mb-4';
+    
+    // Add to the page after the main lifecycle section
+    const mainLifecycleSection = document.querySelector('#metricBirthChart').closest('.row');
+    mainLifecycleSection.parentNode.insertBefore(lifecycleContainer, mainLifecycleSection.nextSibling);
+    
+    companies.forEach(company => {
+        createCompanyLifecycleSection(company, lifecycleContainer);
+    });
+}
+
+// Create lifecycle section for a specific company
+function createCompanyLifecycleSection(company, container) {
+    const companyMetrics = allMetrics.filter(m => m.company === company);
+    
+    if (companyMetrics.length === 0) return;
+    
+    // Create company section
+    const companySection = document.createElement('div');
+    companySection.className = 'col-12 mb-4';
+    companySection.innerHTML = `
+        <div class="card shadow-sm">
+            <div class="card-header bg-gradient-primary text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-building me-2"></i>${company} - Metric Lifecycle Analysis
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="text-primary">${company} - Metric Birth Timeline</h6>
+                        <div id="${company}BirthChart" style="height: 300px;"></div>
+                    </div>
+                    <div class="col-md-6">
+                        <h6 class="text-primary">${company} - Metric Disappearance Analysis</h6>
+                        <div id="${company}DisappearanceChart" style="height: 300px;"></div>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12">
+                        <h6 class="text-primary">${company} - Metric Lifecycle Summary</h6>
+                        <div id="${company}Summary" class="alert alert-info">
+                            <div class="row">
+                                <div class="col-md-3">
+                                    <strong>Total Metrics:</strong> <span id="${company}TotalMetrics">-</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>New Metrics:</strong> <span id="${company}NewMetrics">-</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Disappeared Metrics:</strong> <span id="${company}DisappearedMetrics">-</span>
+                                </div>
+                                <div class="col-md-3">
+                                    <strong>Stable Metrics:</strong> <span id="${company}StableMetrics">-</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    container.appendChild(companySection);
+    
+    // Create company-specific charts
+    createCompanyBirthChart(company, companyMetrics);
+    createCompanyDisappearanceChart(company, companyMetrics);
+    updateCompanySummary(company, companyMetrics);
+}
+
+// Create birth chart for a specific company
+function createCompanyBirthChart(company, companyMetrics) {
+    // Find first appearance of each metric for this company
+    const metricFirstAppearance = {};
+    
+    companyMetrics.forEach(metric => {
+        const metricName = metric.metric_name;
+        const year = parseInt(metric.year);
+        
+        if (!metricFirstAppearance[metricName] || year < metricFirstAppearance[metricName]) {
+            metricFirstAppearance[metricName] = year;
+        }
+    });
+    
+    // Count new metrics by year for this company
+    const newMetricsByYear = {};
+    Object.values(metricFirstAppearance).forEach(year => {
+        newMetricsByYear[year] = (newMetricsByYear[year] || 0) + 1;
+    });
+    
+    // Sort years and get data
+    const years = Object.keys(newMetricsByYear).sort((a, b) => parseInt(a) - parseInt(b));
+    const counts = years.map(year => newMetricsByYear[year]);
+    
+    const trace = {
+        x: years,
+        y: counts,
+        mode: 'lines+markers',
+        type: 'scatter',
+        name: 'New Metrics',
+        line: {color: '#667eea', width: 3},
+        marker: {size: 8}
+    };
+    
+    const layout = {
+        title: `${company} - Metric Birth Timeline`,
+        xaxis: {title: 'Year'},
+        yaxis: {title: 'Number of New Metrics'},
+        hovermode: 'closest'
+    };
+    
+    Plotly.newPlot(`${company}BirthChart`, [trace], layout);
+}
+
+// Create disappearance chart for a specific company
+function createCompanyDisappearanceChart(company, companyMetrics) {
+    const metricHistory = {};
+    
+    // Track all appearances for each metric in this company
+    companyMetrics.forEach(metric => {
+        const metricName = metric.metric_name;
+        const year = parseInt(metric.year);
+        
+        if (!metricHistory[metricName]) {
+            metricHistory[metricName] = [];
+        }
+        metricHistory[metricName].push(year);
+    });
+    
+    // Find gaps in reporting for this company
+    const companyYears = [...new Set(companyMetrics.map(m => parseInt(m.year)))].sort();
+    const disappearancesByYear = {};
+    
+    Object.keys(metricHistory).forEach(metricName => {
+        const appearances = metricHistory[metricName].sort();
+        
+        // Find gaps in reporting
+        for (let i = 0; i < appearances.length - 1; i++) {
+            const currentYear = appearances[i];
+            const nextYear = appearances[i + 1];
+            
+            // If there's a gap, count disappearances
+            if (nextYear - currentYear > 1) {
+                for (let gapYear = currentYear + 1; gapYear < nextYear; gapYear++) {
+                    disappearancesByYear[gapYear] = (disappearancesByYear[gapYear] || 0) + 1;
+                }
+            }
+        }
+        
+        // Check if metric disappeared after last appearance
+        const lastAppearance = Math.max(...appearances);
+        const mostRecentYear = Math.max(...companyYears);
+        if (lastAppearance < mostRecentYear) {
+            for (let gapYear = lastAppearance + 1; gapYear <= mostRecentYear; gapYear++) {
+                disappearancesByYear[gapYear] = (disappearancesByYear[gapYear] || 0) + 1;
+            }
+        }
+    });
+    
+    const disappearanceYears = Object.keys(disappearancesByYear).sort((a, b) => parseInt(a) - parseInt(b));
+    const disappearanceCounts = disappearanceYears.map(year => disappearancesByYear[year]);
+    
+    const trace = {
+        x: disappearanceYears,
+        y: disappearanceCounts,
+        type: 'bar',
+        marker: {color: '#dc3545'},
+        name: 'Disappeared Metrics'
+    };
+    
+    const layout = {
+        title: `${company} - Metric Disappearance Analysis`,
+        xaxis: {title: 'Year'},
+        yaxis: {title: 'Number of Disappeared Metrics'}
+    };
+    
+    Plotly.newPlot(`${company}DisappearanceChart`, [trace], layout);
+}
+
+// Update company summary statistics
+function updateCompanySummary(company, companyMetrics) {
+    const totalMetrics = companyMetrics.length;
+    const uniqueMetrics = new Set(companyMetrics.map(m => m.metric_name)).size;
+    
+    // Count new metrics (first appearance in this company)
+    const metricFirstAppearance = {};
+    companyMetrics.forEach(metric => {
+        const metricName = metric.metric_name;
+        const year = parseInt(metric.year);
+        
+        if (!metricFirstAppearance[metricName] || year < metricFirstAppearance[metricName]) {
+            metricFirstAppearance[metricName] = year;
+        }
+    });
+    const newMetrics = Object.keys(metricFirstAppearance).length;
+    
+    // Count disappeared metrics
+    const metricHistory = {};
+    companyMetrics.forEach(metric => {
+        const metricName = metric.metric_name;
+        const year = parseInt(metric.year);
+        
+        if (!metricHistory[metricName]) {
+            metricHistory[metricName] = [];
+        }
+        metricHistory[metricName].push(year);
+    });
+    
+    const companyYears = [...new Set(companyMetrics.map(m => parseInt(m.year)))].sort();
+    let disappearedCount = 0;
+    
+    Object.keys(metricHistory).forEach(metricName => {
+        const appearances = metricHistory[metricName].sort();
+        const lastAppearance = Math.max(...appearances);
+        const mostRecentYear = Math.max(...companyYears);
+        
+        if (lastAppearance < mostRecentYear) {
+            disappearedCount++;
+        }
+    });
+    
+    const stableMetrics = uniqueMetrics - newMetrics - disappearedCount;
+    
+    // Update summary display
+    document.getElementById(`${company}TotalMetrics`).textContent = totalMetrics;
+    document.getElementById(`${company}NewMetrics`).textContent = newMetrics;
+    document.getElementById(`${company}DisappearedMetrics`).textContent = disappearedCount;
+    document.getElementById(`${company}StableMetrics`).textContent = stableMetrics;
+}
+
+// Populate Report Selector
+function populateReportSelector() {
+    const reportSelector = $('#reportSelector');
+    reportSelector.find('option:not(:first)').remove();
+    
+    // Get unique company-year combinations
+    const reports = [...new Set(allMetrics.map(m => `${m.company} ${m.year}`))].sort();
+    
+    reports.forEach(report => {
+        reportSelector.append(`<option value="${report}">${report}</option>`);
+    });
+    
+    console.log("✅ Populated report selector with", reports.length, "reports");
+}
+
+// Load Report-Specific Charts
+function loadReportSpecificCharts() {
+    const selectedReport = $('#reportSelector').val();
+    
+    if (!selectedReport) {
+        $('#reportSpecificCharts').hide();
+        $('#selectedReportInfo').hide();
+        return;
+    }
+    
+    // Show report info
+    $('#reportInfoText').text(selectedReport);
+    $('#selectedReportInfo').show();
+    
+    // Filter metrics for selected report
+    const [selectedCompany, selectedYear] = selectedReport.split(' ');
+    const reportMetrics = allMetrics.filter(m => 
+        m.company === selectedCompany && m.year === selectedYear
+    );
+    
+    if (reportMetrics.length === 0) {
+        $('#reportSpecificCharts').hide();
+        return;
+    }
+    
+    // Show report-specific charts
+    $('#reportSpecificCharts').show();
+    
+    // Create report-specific charts
+    createReportESGAreaChart(reportMetrics);
+    createReportCategoryChart(reportMetrics);
+    createReportImportanceChart(reportMetrics);
+    createReportUnitChart(reportMetrics);
+    createReportValueChart(reportMetrics);
+}
+
+// Create Report-Specific ESG Area Chart
+function createReportESGAreaChart(metrics) {
+    const areaCounts = {};
+    metrics.forEach(metric => {
+        const area = metric.area || 'Unknown';
+        areaCounts[area] = (areaCounts[area] || 0) + 1;
+    });
+    
+    const areas = Object.keys(areaCounts);
+    const values = areas.map(area => areaCounts[area]);
+    
+    const trace = {
+        values: values,
+        labels: areas,
+        type: 'pie',
+        marker: {
+            colors: ['#28a745', '#ffc107', '#17a2b8']
+        }
+    };
+    
+    const layout = {
+        title: 'ESG Area Distribution',
+        showlegend: true
+    };
+    
+    Plotly.newPlot('reportESGAreaChart', [trace], layout);
+}
+
+// Create Report-Specific Category Chart
+function createReportCategoryChart(metrics) {
+    const categoryCounts = {};
+    metrics.forEach(metric => {
+        const category = metric.category || 'Unknown';
+        categoryCounts[category] = (categoryCounts[category] || 0) + 1;
+    });
+    
+    // Get top 10 categories
+    const sortedCategories = Object.entries(categoryCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 10);
+    
+    const categories = sortedCategories.map(([cat, _]) => cat);
+    const values = sortedCategories.map(([_, count]) => count);
+    
+    const trace = {
+        x: values,
+        y: categories,
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#28a745'}
+    };
+    
+    const layout = {
+        title: 'Top Categories',
+        xaxis: {title: 'Number of Metrics'},
+        yaxis: {title: 'Category'}
+    };
+    
+    Plotly.newPlot('reportCategoryChart', [trace], layout);
+}
+
+// Create Report-Specific Importance Chart
+function createReportImportanceChart(metrics) {
+    const importanceCounts = {};
+    metrics.forEach(metric => {
+        const importance = metric.importance || 'Unknown';
+        importanceCounts[importance] = (importanceCounts[importance] || 0) + 1;
+    });
+    
+    const importances = Object.keys(importanceCounts);
+    const values = importances.map(imp => importanceCounts[imp]);
+    
+    const trace = {
+        values: values,
+        labels: importances,
+        type: 'pie',
+        marker: {
+            colors: ['#dc3545', '#fd7e14', '#20c997']
+        }
+    };
+    
+    const layout = {
+        title: 'Importance Distribution',
+        showlegend: true
+    };
+    
+    Plotly.newPlot('reportImportanceChart', [trace], layout);
+}
+
+// Create Report-Specific Unit Chart
+function createReportUnitChart(metrics) {
+    const unitCounts = {};
+    metrics.forEach(metric => {
+        const unit = metric.unit || 'No unit';
+        unitCounts[unit] = (unitCounts[unit] || 0) + 1;
+    });
+    
+    // Get top 8 units
+    const sortedUnits = Object.entries(unitCounts)
+        .sort((a, b) => b[1] - a[1])
+        .slice(0, 8);
+    
+    const units = sortedUnits.map(([unit, _]) => unit);
+    const values = sortedUnits.map(([_, count]) => count);
+    
+    const trace = {
+        x: values,
+        y: units,
+        type: 'bar',
+        orientation: 'h',
+        marker: {color: '#dc3545'}
+    };
+    
+    const layout = {
+        title: 'Unit Distribution',
+        xaxis: {title: 'Number of Metrics'},
+        yaxis: {title: 'Unit'}
+    };
+    
+    Plotly.newPlot('reportUnitChart', [trace], layout);
+}
+
+// Create Report-Specific Value Chart
+function createReportValueChart(metrics) {
+    const numericValues = [];
+    metrics.forEach(metric => {
+        const value = parseFloat(metric.value);
+        if (!isNaN(value) && value > 0) {
+            numericValues.push(value);
+        }
+    });
+    
+    if (numericValues.length > 0) {
+        const trace = {
+            x: numericValues,
+            type: 'histogram',
+            marker: {color: '#17a2b8'},
+            nbinsx: 15
+        };
+        
+        const layout = {
+            title: 'Metric Value Distribution',
+            xaxis: {title: 'Value'},
+            yaxis: {title: 'Count'}
+        };
+        
+        Plotly.newPlot('reportValueChart', [trace], layout);
+    } else {
+        // Show empty chart with message
+        const layout = {
+            title: 'Metric Value Distribution',
+            annotations: [{
+                text: 'No numeric values available',
+                xref: 'paper',
+                yref: 'paper',
+                x: 0.5,
+                y: 0.5,
+                showarrow: false
+            }]
+        };
+        Plotly.newPlot('reportValueChart', [], layout);
+    }
+}
+
+// Populate visualization filters
+function populateVizFilters() {
+    if (allMetrics.length > 0) {
+        // Company filter
+        const companies = [...new Set(allMetrics.map(m => m.company))];
+        const companyFilter = $('#vizCompanyFilter');
+        companyFilter.find('option:not(:first)').remove();
+        companies.forEach(company => {
+            companyFilter.append(`<option value="${company}">${company}</option>`);
+        });
+
+        // Year filter
+        const years = [...new Set(allMetrics.map(m => m.year))];
+        const yearFilter = $('#vizYearFilter');
+        yearFilter.find('option:not(:first)').remove();
+        years.sort().forEach(year => {
+            yearFilter.append(`<option value="${year}">${year}</option>`);
+        });
+
+        // Category filter
+        const categories = [...new Set(allMetrics.map(m => m.category))];
+        const categoryFilter = $('#vizCategoryFilter');
+        categoryFilter.find('option:not(:first)').remove();
+        categories.sort().forEach(category => {
+            categoryFilter.append(`<option value="${category}">${category}</option>`);
+        });
+    }
+}
+
+// Apply visualization filters
+function applyVizFilters() {
+    // For now, just reload the charts
+    // In a more advanced implementation, you could filter the data on the server side
+    loadVisualizations();
+}
+
+// Clear visualization filters
+function clearVizFilters() {
+    $('#vizCompanyFilter').val('');
+    $('#vizYearFilter').val('');
+    $('#vizAreaFilter').val('');
+    $('#vizCategoryFilter').val('');
+    loadVisualizations();
+}
+
+// Refresh charts
+function refreshCharts() {
+    createChartsFromRawData();
+}
+
+// Test API function
+function testAPI() {
+    console.log("🧪 Testing API...");
+    $.ajax({
+        url: '/api/data',
+        method: 'GET',
+        success: function(data) {
+            console.log("✅ API Test Success");
+            console.log("Data keys:", Object.keys(data));
+            
+            let testHtml = '<h6>API Test Results:</h6>';
+            testHtml += `<p><strong>Number of entries:</strong> ${Object.keys(data).length}</p>`;
+            
+            Object.keys(data).forEach(key => {
+                const entry = data[key];
+                testHtml += `<p><strong>${key}:</strong> ${entry.company} ${entry.year} - ${entry.data.metrics ? entry.data.metrics.length : 0} metrics</p>`;
+            });
+            
+            $('#debugInfo').html(testHtml);
+        },
+        error: function(xhr, status, error) {
+            console.error("❌ API Test Failed:", error);
+            $('#debugInfo').html(`<p class="text-danger">API Test Failed: ${error}</p>`);
+        }
+    });
+}
+
+// Simple test function
+function simpleTest() {
+    console.log("🧪 Simple test running...");
+    $('#debugInfo').html('<p>Simple test is working!</p>');
+}
+
+// Load data and initialize
+waitForJQuery(function() {
+    console.log("🔄 Initializing visualization page...");
+    
+    // Load metrics data first using the same pattern as exploration page
+    $.ajax({
+        url: '/api/data',
+        method: 'GET',
+        dataType: 'json',
+        success: function(data) {
+            console.log("✅ Data loaded successfully");
+            console.log("Data structure:", Object.keys(data));
+            
+            allMetrics = [];
+            
+            for (let company in data) {
+                console.log("Processing company:", company);
+                if (data[company].data && data[company].data.metrics) {
+                    console.log("Found metrics for", company, ":", data[company].data.metrics.length);
+                    data[company].data.metrics.forEach(metric => {
+                        allMetrics.push({
+                            ...metric,
+                            company: data[company].company,
+                            year: data[company].year
+                        });
+                    });
+                } else {
+                    console.log("No metrics found for", company);
+                }
+            }
+            
+            console.log(`📊 Total metrics loaded: ${allMetrics.length}`);
+            console.log("Sample metrics:", allMetrics.slice(0, 3));
+            
+            // Update statistics immediately
+            updateStatistics();
+            
+            // Then load visualizations
+            loadVisualizations();
+        },
+        error: function(xhr, status, error) {
+            console.error("❌ Failed to load data:", error);
+            console.error("Status:", status);
+            console.error("Response:", xhr.responseText);
+            showError("Failed to load data");
+        }
+    });
+});
+
+function showError(message) {
+    // Simple error display
+    alert("Error: " + message);
+}
+</script>
+{% endblock %} 
